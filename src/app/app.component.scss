@@ -1,0 +1,56 @@
+md-sidenav-container {
+    height: 100%;
+}
+
+md-sidenav {
+
+    width: 250px;
+    transition: transform .4s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 3px 0 6px rgba(0,0,0,.24);
+
+    h3 {
+        background: rgba(0,0,0,.32);
+        color: #fff;
+        border: none;
+        font-size: 10px;
+        letter-spacing: 1px;
+        line-height: 24px;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin: 0;
+        padding: 0 16px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            border-color: rgba(0,0,0,.06);
+            color: rgba(0,0,0,.54);
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            margin: 0;
+            padding: 0;
+
+            a {
+                color: rgba(0,0,0,.54);
+                box-sizing: border-box;
+                display: block;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 47px;
+                text-decoration: none;
+                transition: all .3s;
+                padding: 0 16px;
+                position: relative;
+
+                &:hover {
+                    background: #fafafa;
+                    color: #00bcd4;
+                }
+            }
+        }
+    }
+}
