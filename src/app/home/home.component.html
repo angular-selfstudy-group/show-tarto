@@ -1,0 +1,16 @@
+<md-card>
+	<md-input-container>
+		<input type="search" mdInput [formControl]="searchInput" placeholder="Search show" [mdAutocomplete]="auto">
+		<md-icon mdPrefix>search</md-icon>
+	</md-input-container>
+
+	<md-autocomplete #auto="mdAutocomplete">
+		<md-option *ngFor="let show of showSearchResults | async" [value]="show.title">
+			<div class="show-result">
+				<img class="poster" src="{{show.posterUrl}}"/>
+				<span class="year">{{ show.year }}</span>
+				<span class="title">{{ show.title }}</span>
+			</div>			
+		</md-option>
+	</md-autocomplete>
+</md-card>

@@ -1,0 +1,25 @@
+md-input-container {
+	width: 100%;
+}
+
+md-option {
+	$option-height: 75px;
+	$option-padding: 5px;
+
+	height: $option-height;
+
+	.show-result {
+		padding: $option-padding 0;
+		display: flex;
+
+		.poster{
+			object-fit: cover;
+			width: $option-height * 2 / 3;
+			height: $option-height - 2 * $option-padding;
+		}
+
+		.year {
+			padding: 0 10px;
+		}
+	}
+}
