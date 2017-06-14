@@ -10,15 +10,16 @@ import 'hammerjs';
 // Components
 import { AppComponent } from './app.component';
 
+import { ComponentsModule } from './components/components.module';
+import { PagesModule } from './pages/pages.module';
+
 // Services
 import { ServicesModule } from "app/services";
-import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +28,9 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
-    ServicesModule
+    ServicesModule,
+    ComponentsModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

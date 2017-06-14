@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 
-import { SearchService } from '../services/search.service';
+import { SearchService } from '../../services/search.service';
 import 'rxjs/Rx';
 
 @Component({
-	selector: 'app-home',
-	templateUrl: './home.component.html',
-	styleUrls: ['./home.component.scss']
+	selector: 'st-autocomplete',
+	templateUrl: './autocomplete.component.html',
+	styleUrls: ['./autocomplete.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class AutoCompleteComponent implements OnInit {
 	searchInput: FormControl;
 	showSearchResults: Observable<any>;
 
