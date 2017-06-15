@@ -6,6 +6,7 @@ import { Response, Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { CardModel } from './../../models';
 
 
 @Injectable()
@@ -43,4 +44,23 @@ export class SearchService extends SearchServiceBase {
             });
     }
 
+    public GetPopularMovies(): Observable<CardModel[]> {
+        return this._jsonp
+            .request(`${this.TMDB_API}movie/popular?api_key=${this.API_KEY}&callback=JSONP_CALLBACK`, { method: 'Get' })
+            .map((resp: Response) => {
+                return resp.json()
+                    .results
+                    .map(json => {
+                        return {
+                            title: json.name || json.title,
+                            releaseYear: json.release_date,
+                            posterUrl: json.backdrop_path || json.poster_path
+                                ? this.TMDB_API_POSTERS + (json.backdrop_path || json.poster_path)
+                                : '../../../assets/placeholder-image.png',
+                            description: json.overview,
+                            id: json.id
+                        } as CardModel;
+                    });
+            });
+    }
 }

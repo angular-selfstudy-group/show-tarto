@@ -1,0 +1,18 @@
+<div *ngIf="!isLoading">
+    <md-card class="movie-card">
+        <md-card-header class="movie-header">
+            <md-card-title> {{ Model.title }}</md-card-title>
+            <md-card-subtitle>{{ Model.releaseYear }}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="{{Model.posterUrl}}">
+        <md-card-content class="movie-content-description">
+            <p>
+                {{ Model.description }}
+            </p>
+        </md-card-content>
+        <md-card-actions>
+            <button md-button><i class="material-icons">add</i></button>
+            <button md-button><i class="material-icons">favorite</i></button>
+        </md-card-actions>
+    </md-card>
+</div>

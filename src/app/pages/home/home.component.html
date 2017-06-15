@@ -1,2 +1,11 @@
 <st-autocomplete></st-autocomplete>
+
+
+<div class="popular-list">
+    <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
+    <div *ngIf="!isLoading" class="center-list">
+        <st-moviecard *ngFor="let movie of popularMovies" [Model]='movie'></st-moviecard>
+    </div>
+</div>
+
 <!-- TODO most popular / recently added / watch list cards components -->

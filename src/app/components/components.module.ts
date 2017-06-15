@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { AutoCompleteModule } from 'app/components/autocomplete/autocomplete.module';
+import { AutoCompleteModule } from './autocomplete/autocomplete.module';
+import { MovieCardModule } from './movie-card/movie-card.module'
 
 @NgModule({
-    imports: [AutoCompleteModule],
-    exports: [AutoCompleteModule],
+    imports: [AutoCompleteModule, MovieCardModule],
+    exports: [AutoCompleteModule, MovieCardModule],
     declarations: [],
     providers: [],
 })

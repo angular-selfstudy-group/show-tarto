@@ -14,7 +14,7 @@ export class AutoCompleteComponent implements OnInit {
 	searchInput: FormControl;
 	showSearchResults: Observable<any>;
 
-	constructor(private searchService: SearchService) { 
+	constructor(private searchService: SearchService) {
 		this.searchInput = new FormControl();
 		this.showSearchResults = this.searchInput.valueChanges
 			.debounceTime(500)
