@@ -10,19 +10,14 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SearchService extends SearchServiceBase {
-    private config;
+    private readonly TMDB_API: string = 'https://api.themoviedb.org/3/';
+    private readonly TMDB_API_POSTERS: string = 'https://image.tmdb.org/t/p/w500';
 
-    private TMDB_API: string;
-    private TMDB_API_POSTERS: string;
-    private TMDB_API_KEY: string;
+    private readonly API_KEY: string = '';
 
     constructor(private _jsonp: Jsonp, private _configService: ConfigurationService) {
         super();
-        this.config = _configService.getConfig();
-
-        this.TMDB_API_KEY = this.config['apiKey'];
-        this.TMDB_API = this.config['apiUrl'];
-        this.TMDB_API_POSTERS = this.config['apiPosterUrl'];
+        this.API_KEY = _configService.getConfigKey('apiKey');
     }
 
     public Search(term: string): Observable<Show[]> {
@@ -31,7 +26,7 @@ export class SearchService extends SearchServiceBase {
         }
 
         return this._jsonp
-            .request(`${this.TMDB_API}search/multi?query=${term}&api_key=${this.TMDB_API_KEY}&callback=JSONP_CALLBACK`, { method: 'Get' })
+            .request(`${this.TMDB_API}search/multi?query=${term}&api_key=${this.API_KEY}&callback=JSONP_CALLBACK`, { method: 'Get' })
             .map((resp: Response) => {
                 return resp.json()
                     .results
