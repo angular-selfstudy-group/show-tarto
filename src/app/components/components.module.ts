@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { AutoCompleteModule } from "app/components/autocomplete/autocomplete.module";
+import { AutoCompleteModule } from 'app/components/autocomplete/autocomplete.module';
 
 @NgModule({
     imports: [AutoCompleteModule],

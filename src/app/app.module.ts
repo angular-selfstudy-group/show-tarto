@@ -14,7 +14,7 @@ import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
 
 // Services
-import { ServicesModule } from "app/services";
+import { ServicesModule } from 'app/services';
 
 
 @NgModule({
