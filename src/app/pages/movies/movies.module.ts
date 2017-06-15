@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 
+import { MoviesRoutingModule } from './movies-routing.module';
+import { MoviesComponent } from './movies.component';
+
 @NgModule({
-    imports: [],
+    imports: [MoviesRoutingModule],
     exports: [],
-    declarations: [],
+    declarations: [MoviesComponent],
     providers: [],
 })
 export class MoviesModule { }
