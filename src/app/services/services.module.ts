@@ -5,6 +5,9 @@ import { DataService } from './data/data.service';
 import { SearchService as SearchServiceBase } from './';
 import { SearchService } from './search/search.service';
 
+import { ConfigurationService as ConfigurationServiceBase } from './';
+import { ConfigurationService } from './configuration/configuration.service';
+
 import { JsonpModule } from '@angular/http';
 
 @NgModule({
@@ -12,6 +15,7 @@ import { JsonpModule } from '@angular/http';
     providers: [
         { provide: DataServiceBase, useClass: DataService },
         { provide: SearchServiceBase, useClass: SearchService },
+        { provide: ConfigurationServiceBase, useClass: ConfigurationService },
     ],
 })
 export class ServicesModule { }
