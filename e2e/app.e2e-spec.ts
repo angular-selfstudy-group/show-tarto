@@ -7,10 +7,19 @@ describe('show-tarto App', () => {
     page = new ShowTartoPage();
   });
 
-  it('should display welcome message', done => {
+  it('should have a title', done => {
     page.navigateTo();
-    page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Welcome to app!!'))
+
+    page.getTitle()
+      .then(msg => expect(msg).toEqual('ShowTarto'))
+      .then(done, done.fail);
+  });
+
+  it('Get Popular items equal 5', done => {
+    page.navigateTo();
+
+    page.getPopular()
+      .then(list => expect(list).toBe(5))
       .then(done, done.fail);
   });
 });

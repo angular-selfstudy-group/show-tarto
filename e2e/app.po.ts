@@ -5,7 +5,11 @@ export class ShowTartoPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getTitle() {
+    return browser.getTitle();
+  }
+
+  getPopular() {
+    return element.all(by.css('st-moviecard')).count();
   }
 }
