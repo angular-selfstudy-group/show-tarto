@@ -12,7 +12,7 @@ import { CardModel } from './../../models';
 @Injectable()
 export class SearchService extends SearchServiceBase {
     private readonly TMDB_API: string = 'https://api.themoviedb.org/3/';
-    private readonly TMDB_API_POSTERS: string = 'https://image.tmdb.org/t/p/w500';
+    private readonly TMDB_API_POSTERS: string = 'https://image.tmdb.org/t/p/w1000';
 
     private readonly API_KEY: string = '';
 

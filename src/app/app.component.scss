@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 md-sidenav-container {
     height: 100%;
 }
@@ -41,7 +45,6 @@ md-sidenav {
             
             a {
                 color: rgba(0,0,0,.54);
-                box-sizing: border-box;
                 display: block;
                 font-size: 14px;
                 font-weight: 400;
