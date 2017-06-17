@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs/Observable';
-import { CardModel } from './../models';
+import { CardModel, MovieDetailModel } from './../models';
 
 export interface Show {
 	title: string;
@@ -10,4 +10,5 @@ export interface Show {
 export abstract class SearchService {
 	public abstract Search(term: string): Observable<Show[]>;
 	public abstract GetPopularMovies(): Observable<CardModel[]>
+	public abstract GetMovieDetails(id: number): Observable<MovieDetailModel>
 }

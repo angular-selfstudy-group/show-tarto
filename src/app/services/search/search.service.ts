@@ -6,7 +6,7 @@ import { Response, Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { CardModel } from './../../models';
+import { CardModel, MovieDetailModel } from './../../models';
 
 
 @Injectable()
@@ -61,6 +61,23 @@ export class SearchService extends SearchServiceBase {
                             id: json.id
                         } as CardModel;
                     });
+            });
+    }
+
+    public GetMovieDetails(id: number): Observable<MovieDetailModel> {
+        return this._jsonp
+            .request(`${this.TMDB_API}movie/${id}?api_key=${this.API_KEY}&callback=JSONP_CALLBACK`,  { method: 'Get' })
+            .map((resp: Response) => {
+                let obj = resp.json();
+                let convertedModel = Object.assign({}, {
+                        id: obj.id,
+                        imdb_id: obj.imdb_id,
+                        title: obj.title,
+                        poster: this.TMDB_API_POSTERS + obj.poster_path,
+                        genres: obj.genres,
+                        overview: obj.overview
+                    })
+                return convertedModel as MovieDetailModel;
             });
     }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SearchService } from './../../services/'
 import { CardModel } from './../../models';
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'st-moviecard',
@@ -13,7 +14,7 @@ export class MovieCardComponent implements OnInit {
     private isLoading: boolean;
     private tooltipPosition: string;
 
-    constructor() {
+    constructor(private router: Router) {
         this.isLoading = true;
         this.tooltipPosition = 'below';
     }
@@ -23,7 +24,7 @@ export class MovieCardComponent implements OnInit {
     }
 
     private cardClick() {
-        console.log('clicked');
+        this.router.navigate(['movieDetail/', this.Model.id]);
     }
 
     private favorite(event: Event, id: string) {

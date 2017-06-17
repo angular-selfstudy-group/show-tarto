@@ -1,0 +1,6 @@
+<md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
+<md-list *ngIf="!isLoading">
+  <md-list-item>{{Model.title}}</md-list-item>
+  <md-list-item>{{Model.overview}}</md-list-item>
+  <img src="{{Model.poster}}" >
+</md-list>
