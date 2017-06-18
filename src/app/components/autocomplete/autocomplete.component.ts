@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 
-import { SearchService, Show } from '../../services/search.service';
+import { SearchService, Show, MovieStoreServiceBase } from '../../services';
 
 import 'rxjs/Rx';
 
@@ -15,7 +15,7 @@ export class AutoCompleteComponent implements OnInit {
 	searchInput: FormControl;
 	showSearchResults: Observable<any>;
 
-	constructor(private searchService: SearchService) {
+	constructor(private searchService: SearchService, private movieStoreService: MovieStoreServiceBase) {
 		this.searchInput = new FormControl();
 		this.showSearchResults = this.searchInput.valueChanges
 			.debounceTime(500)
@@ -32,5 +32,9 @@ export class AutoCompleteComponent implements OnInit {
 
 	displayResultInSearchbox(show: Show) {
 		return show && show.title;
+	}
+
+	addToWatchList(show: Show) {
+		this.movieStoreService.addToWatchList(show);
 	}
 }

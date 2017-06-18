@@ -8,6 +8,9 @@ import { SearchService } from './search/search.service';
 import { ConfigurationService as ConfigurationServiceBase } from './';
 import { ConfigurationService } from './configuration/configuration.service';
 
+import { MovieStoreServiceBase } from './';
+import { MovieStoreService } from './movie-store/movie-store.service';
+
 import { JsonpModule } from '@angular/http';
 
 @NgModule({
@@ -16,6 +19,7 @@ import { JsonpModule } from '@angular/http';
         { provide: DataServiceBase, useClass: DataService },
         { provide: SearchServiceBase, useClass: SearchService },
         { provide: ConfigurationServiceBase, useClass: ConfigurationService },
+        { provide: MovieStoreServiceBase , useClass: MovieStoreService },
     ],
 })
 export class ServicesModule { }
