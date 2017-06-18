@@ -12,13 +12,14 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class SearchService extends SearchServiceBase {
 	private readonly TMDB_API: string = 'https://api.themoviedb.org/3';
-	private readonly TMDB_API_POSTERS: string = 'https://image.tmdb.org/t/p/w1000';
+	private TMDB_API_POSTERS;
 
 	private readonly API_KEY: string = '';
 
 	constructor(private _jsonp: Jsonp, private _configService: ConfigurationService) {
 		super();
 		this.API_KEY = _configService.getConfigKey('apiKey');
+        this.TMDB_API_POSTERS = _configService.getPictureSized;
 	}
 
 	public Search(term: string): Observable<Show[]> {
@@ -35,7 +36,7 @@ export class SearchService extends SearchServiceBase {
 					return {
 						title: json.name || json.title,
 						year: this.getYearIfAny(json),
-						posterUrl: this.getDefaultPosterIfEmpty(json.backdrop_path || json.poster_path)
+						posterUrl: this.getDefaultPosterIfEmpty(json.backdrop_path || json.poster_path, '500')
 					} as Show;
 				})
 		);
@@ -52,7 +53,7 @@ export class SearchService extends SearchServiceBase {
 						title: json.title,
 						description: json.overview,
 						releaseYear: json.release_date,
-						posterUrl: this.getDefaultPosterIfEmpty(json.backdrop_path || json.poster_path)
+						posterUrl: this.getDefaultPosterIfEmpty(json.backdrop_path || json.poster_path, '1000')
 					} as CardModel;
 				})
 			);
@@ -67,7 +68,7 @@ export class SearchService extends SearchServiceBase {
 					id: json.id,
 					imdb_id: json.imdb_id,
 					title: json.title,
-					poster: this.TMDB_API_POSTERS + json.poster_path,
+					poster: this.getDefaultPosterIfEmpty(json.poster_path, '500'),
 					genres: json.genres,
 					overview: json.overview
 				} as MovieDetailModel;
@@ -89,10 +90,10 @@ export class SearchService extends SearchServiceBase {
 			});
 	}
 
-	private getDefaultPosterIfEmpty(uri: string) {
+	private getDefaultPosterIfEmpty(uri: string, size: string) {
 		if(!uri)
 			return '../../../assets/placeholder-image.png'
 
-		return this.TMDB_API_POSTERS + uri;
+		return this.TMDB_API_POSTERS(size) + uri;
 	}
 }

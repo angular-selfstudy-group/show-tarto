@@ -11,4 +11,7 @@ export class ConfigurationService extends ConfigurationServiceBase {
     getConfigKey(key: string): string {
         return configuration.configuration[key];
     }
+    getPictureSized(size: string): string {
+        return `${configuration.configuration.imageURL}${size}`;
+    }
 }
