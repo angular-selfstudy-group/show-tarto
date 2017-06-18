@@ -12,14 +12,19 @@ md-option {
 		padding: $option-padding 0;
 		display: flex;
 
-		.poster{
+		.poster {
 			object-fit: cover;
 			width: $option-height * 2 / 3;
 			height: $option-height - 2 * $option-padding;
 		}
 
+		.title-buttons-container {
+			padding: 10px 0 0 10px;
+			line-height: 1em;
+		}
+
 		.year {
-			padding: 0 10px;
+			margin-left: auto;
 		}
 	}
 }

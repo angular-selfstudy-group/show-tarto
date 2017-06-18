@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 
-import { SearchService } from '../../services/search.service';
+import { SearchService, Show } from '../../services/search.service';
+
 import 'rxjs/Rx';
 
 @Component({
@@ -27,5 +28,9 @@ export class AutoCompleteComponent implements OnInit {
 	}
 
 	ngOnInit() {
+	}
+
+	displayResultInSearchbox(show: Show) {
+		return show && show.title;
 	}
 }

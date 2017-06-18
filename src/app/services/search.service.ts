@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { Show, CardModel, MovieDetailModel } from './../models';
+export { Show, CardModel, MovieDetailModel };
 
 export abstract class SearchService {
 	public abstract Search(term: string): Observable<Show[]>;

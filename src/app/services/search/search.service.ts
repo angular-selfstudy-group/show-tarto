@@ -34,7 +34,7 @@ export class SearchService extends SearchServiceBase {
 				.map(json => {
 					return {
 						title: json.name || json.title,
-						year: json.release_date || json.first_air_date,
+						year: this.getYearIfAny(json),
 						posterUrl: this.getDefaultPosterIfEmpty(json.backdrop_path || json.poster_path)
 					} as Show;
 				})
@@ -72,6 +72,11 @@ export class SearchService extends SearchServiceBase {
 					overview: json.overview
 				} as MovieDetailModel;
 			});
+	}
+
+	private getYearIfAny(json): number {
+		if(json.release_date || json.first_air_date)
+			return new Date(json.release_date || json.first_air_date).getFullYear();
 	}
 
 	private getJSONP(url: string) : Observable<any> {
