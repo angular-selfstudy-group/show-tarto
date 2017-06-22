@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SearchService } from './../../services/'
 import { CardModel } from './../../models';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'st-moviecard',
@@ -11,7 +11,7 @@ import { Router } from "@angular/router";
 export class MovieCardComponent implements OnInit {
     @Input() Model: CardModel;
 
-    private isLoading: boolean;
+    public isLoading: boolean;
     private tooltipPosition: string;
 
     constructor(private router: Router) {

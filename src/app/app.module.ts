@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import 'hammerjs';
 
@@ -32,7 +33,7 @@ import { ServicesModule } from 'app/services';
     ComponentsModule,
     PagesModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

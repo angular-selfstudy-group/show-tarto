@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 	private popularMovies: CardModel[];
 
 	private Model: CardModel;
-	private isLoading: boolean;
+	public isLoading: boolean;
 
 	constructor(private _searchService: SearchService) { }
 	ngOnInit() {
