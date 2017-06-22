@@ -7,4 +7,10 @@ export interface MovieDetailModel {
     poster: string;
     genres: GenreModel[];
     overview: string;
+    original_language: string;
+    popularity: number;
+    release_date: string;
+    runtime: number;
+    revenue: number;
+    vote_average: number;
 }

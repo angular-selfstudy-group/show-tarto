@@ -24,7 +24,7 @@ export class MovieCardComponent implements OnInit {
     }
 
     private cardClick() {
-        this.router.navigate(['movieDetail/', this.Model.id]);
+        this.router.navigate(['movies/', this.Model.id]);
     }
 
     private favorite(event: Event, id: string) {

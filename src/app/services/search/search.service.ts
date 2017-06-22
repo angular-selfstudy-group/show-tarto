@@ -70,7 +70,13 @@ export class SearchService extends SearchServiceBase {
 					title: json.title,
 					poster: this.getDefaultPosterIfEmpty(json.poster_path, '500'),
 					genres: json.genres,
-					overview: json.overview
+					overview: json.overview,
+                    original_language: json.original_language,
+                    popularity: json.popularity,
+                    release_date: json.release_date,
+                    runtime: json.runtime,
+                    revenue: json.revenue,
+                    vote_average: json.vote_average
 				} as MovieDetailModel;
 			});
 	}
