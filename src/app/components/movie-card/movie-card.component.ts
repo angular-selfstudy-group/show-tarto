@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SearchService } from './../../services/'
 import { CardModel } from './../../models';
 import { Router } from '@angular/router';
+import { WatchListService } from '../../services/watchlist.service';
 
 @Component({
     selector: 'st-moviecard',
@@ -13,27 +14,39 @@ export class MovieCardComponent implements OnInit {
 
     public isLoading: boolean;
     private tooltipPosition: string;
+    private tooltipText: string;
+    private addedToWatchList: boolean;
+    private addedToFavorites: boolean;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private _watchlistService: WatchListService) {
         this.isLoading = true;
         this.tooltipPosition = 'below';
     }
 
     ngOnInit() {
         this.isLoading = false;
+        this.addedToWatchList = this._watchlistService.contains(this.Model);
+        this.tooltipText = this.addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist';
+
     }
 
     private cardClick() {
         this.router.navigate(['movies/', this.Model.id]);
     }
 
-    private favorite(event: Event, id: string) {
+    private favorite(event: Event) {
         event.stopPropagation();
-        console.log(`Movie [${id}] added to favorite`);
+        console.log(`Movie [${this.Model.id}] added to favorite`);
     }
 
-    private watchlist(event: Event, id: string) {
+    private watchlist(event: Event) {
+        if (this.addedToWatchList) {
+            this._watchlistService.remove(this.Model);
+        } else {
+            this._watchlistService.add(this.Model);
+        }
+        this.addedToWatchList = !this.addedToWatchList;
         event.stopPropagation();
-        console.log(`Movie [${id}] added to watchlist`);
+        console.log(`Movie [${this.Model.id}] added to watchlist`);
     }
 }

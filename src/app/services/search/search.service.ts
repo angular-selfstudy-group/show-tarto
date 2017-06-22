@@ -35,6 +35,7 @@ export class SearchService extends SearchServiceBase {
 				.map(json => {
 					return {
 						id: json.id,
+						type: json.media_type,
 						title: json.name || json.title,
 						year: this.getYearIfAny(json),
 						posterUrl: this.getDefaultPosterIfEmpty(json.backdrop_path || json.poster_path, '500')
@@ -51,6 +52,7 @@ export class SearchService extends SearchServiceBase {
 				.map(json => {
 					return {
 						id: json.id,
+						type: 'movie',
 						title: json.title,
 						description: json.overview,
 						releaseYear: json.release_date,
@@ -67,6 +69,7 @@ export class SearchService extends SearchServiceBase {
 			.map(json => {
 				return {
 					id: json.id,
+					type: json.media_type,
 					imdb_id: json.imdb_id,
 					title: json.title,
 					poster: this.getDefaultPosterIfEmpty(json.poster_path, '500'),
