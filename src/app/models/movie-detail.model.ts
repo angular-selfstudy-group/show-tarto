@@ -1,7 +1,7 @@
-import { GenreModel } from "app/models";
+import { GenreModel } from './';
+import { MediaModel } from './';
 
-export interface MovieDetailModel {
-    id: number;
+export interface MovieDetailModel extends MediaModel {
     imdb_id: string;
     title: string;
     poster: string;

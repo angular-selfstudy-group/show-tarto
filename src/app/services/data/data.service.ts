@@ -15,6 +15,11 @@ export class DataService extends DataServiceBase {
         return JSON.parse(item) as T;
     }
 
+    public GetAll<T>(): T {
+        const item = localStorage.getItem(DataService.storageKey);
+        return JSON.parse(item) as T;
+    }
+
     public RemoveItem(key: string): void {
         localStorage.removeItem(key);
     }

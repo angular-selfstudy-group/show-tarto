@@ -1,5 +1,7 @@
-export interface Show {
-	title: string;
-	year: number;
-	posterUrl: string;
+import { MediaModel } from './';
+
+export interface Show extends MediaModel {
+    title: string;
+    year: number;
+    posterUrl: string;
 }

@@ -33,7 +33,7 @@ import { ServicesModule } from 'app/services';
     ComponentsModule,
     PagesModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
