@@ -5,23 +5,26 @@ import { SearchService } from './../../services';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-	selector: 'app-home',
-	templateUrl: './home.component.html',
-	styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
-	private popularMovies: CardModel[];
+    private popularMovies: CardModel[];
 
-	private Model: CardModel;
-	public isLoading: boolean;
+    private Model: CardModel;
+    public isLoading: boolean;
 
-	constructor(private _searchService: SearchService) { }
-	ngOnInit() {
-		this.isLoading = true;
-		this._searchService.GetPopularMovies().subscribe(results => {
-			this.popularMovies = results.slice(0, 5);
-			this.isLoading = false;
-		});
-	}
+    constructor(private _searchService: SearchService) { }
+    ngOnInit() {
+        this.isLoading = true;
+        this._searchService.GetPopularMovies().subscribe(results => {
+            const maxIndex = results.length - 1;
+            const itemsToShow = 5;
+            const randomIndex = Math.floor(Math.random() * maxIndex) + itemsToShow;
+            this.popularMovies = results.slice(randomIndex - itemsToShow, randomIndex);
+            this.isLoading = false;
+        });
+    }
 }
