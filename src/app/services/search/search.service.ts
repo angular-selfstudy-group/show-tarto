@@ -73,13 +73,14 @@ export class SearchService extends SearchServiceBase {
                     imdb_id: json.imdb_id,
                     title: json.title,
                     poster: this.getDefaultPosterIfEmpty(json.poster_path, '500'),
+					backdrop_image: this.getDefaultPosterIfEmpty(json.backdrop_path, '1280'),
                     genres: json.genres,
                     overview: json.overview,
                     original_language: json.original_language,
                     popularity: json.popularity,
                     release_date: json.release_date,
                     runtime: json.runtime,
-                    revenue: json.revenue,
+					revenue: json.revenue || "Unknown",
                     vote_average: json.vote_average
                 } as MovieDetailModel;
             });

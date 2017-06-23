@@ -1,6 +1,12 @@
 <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
-<md-list *ngIf="!isLoading">
-  <md-list-item>{{Model.title}}</md-list-item>
-  <md-list-item>{{Model.overview}}</md-list-item>
-  <img src="{{Model.poster}}" >
-</md-list>
+<section *ngIf="!isLoading" class="movie-page">
+  <div class="movie-cover-picture" style="background-image: url({{Model.backdrop_image}})"></div>
+  <h1 class="movie-title">{{Model.title}}</h1>
+  <p class="movie-overview">{{Model.overview}}</p>
+  <!--<h3>{{Model.imdb_id}}</h3>-->
+  <h3>{{Model.original_language}}</h3>
+  <h3>{{Model.release_date}}</h3>
+  <h3>{{Model.runtime}}</h3>
+  <h3>{{Model.revenue}}</h3>
+  <h3 *ngFor="let genre of Model.genres">{{genre.name}}</h3>
+</section>
