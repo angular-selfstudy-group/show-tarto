@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SearchService } from './../../services/'
-import { CardModel } from './../../models';
+import { MovieDetailModel } from './../../models';
 import { Router } from '@angular/router';
-import { WatchListService } from '../../services/watchlist.service';
+import { WatchListService, MediaModel } from '../../services/watchlist.service';
 
 @Component({
     selector: 'st-moviecard',
@@ -10,24 +10,29 @@ import { WatchListService } from '../../services/watchlist.service';
     styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent implements OnInit {
-    @Input() Model: CardModel;
-
+    @Input() Id: number;
+    public Model: MovieDetailModel;
     public isLoading: boolean;
     private tooltipPosition: string;
     private tooltipText: string;
     private addedToWatchList: boolean;
     private addedToFavorites: boolean;
 
-    constructor(private router: Router, private _watchlistService: WatchListService) {
+    constructor(private router: Router, private _watchlistService: WatchListService, private _searchService: SearchService) {
         this.isLoading = true;
         this.tooltipPosition = 'below';
     }
 
     ngOnInit() {
-        this.isLoading = false;
-        this.addedToWatchList = this._watchlistService.contains(this.Model);
-        this.tooltipText = this.addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist';
-
+        this.isLoading = true;
+        if (this.Id) {
+            this._searchService.GetMovieDetails(this.Id).subscribe(m => {
+                this.Model = m;
+                this.isLoading = false;
+                this.addedToWatchList = this._watchlistService.contains(this.Model);
+                this.tooltipText = this.addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist';
+            })
+        }
     }
 
     private cardClick() {

@@ -3,6 +3,7 @@ import { AutoCompleteComponent } from './../../components/autocomplete/autocompl
 import { CardModel } from './../../models';
 import { SearchService } from './../../services';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'app-home',
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit {
         this._searchService.GetPopularMovies().subscribe(results => {
             const maxIndex = results.length - 1;
             const itemsToShow = 5;
-            const randomIndex = Math.floor(Math.random() * maxIndex) + itemsToShow;
+            const randomIndex = Math.floor(Math.random() * (maxIndex - itemsToShow)) + itemsToShow;
             this.popularMovies = results.slice(randomIndex - itemsToShow, randomIndex);
             this.isLoading = false;
         });

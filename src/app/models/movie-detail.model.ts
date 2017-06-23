@@ -5,7 +5,7 @@ export interface MovieDetailModel extends MediaModel {
     imdb_id: string;
     title: string;
     poster: string;
-    backdrop_image: string;
+    poster_bg: string;
     genres: GenreModel[];
     overview: string;
     original_language: string;
