@@ -73,6 +73,7 @@ export class SearchService extends SearchServiceBase {
                     imdb_id: json.imdb_id,
                     title: json.title,
                     poster: this.getDefaultPosterIfEmpty(json.poster_path, '500'),
+                    poster_bg: this.getDefaultPosterIfEmpty(json.backdrop_path, '1000'),
                     genres: json.genres,
                     overview: json.overview,
                     original_language: json.original_language,

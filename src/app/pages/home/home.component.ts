@@ -3,6 +3,7 @@ import { AutoCompleteComponent } from './../../components/autocomplete/autocompl
 import { CardModel } from './../../models';
 import { SearchService } from './../../services';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'app-home',

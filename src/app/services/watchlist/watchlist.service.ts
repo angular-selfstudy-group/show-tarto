@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { WatchListService as WatchListServiceBase, MediaModel } from '../watchlist.service';
 import { DataService } from '../data.service';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class WatchListService implements WatchListServiceBase {
@@ -8,7 +9,7 @@ export class WatchListService implements WatchListServiceBase {
     constructor(private _dataService: DataService) { }
     public add(item: MediaModel) {
         item.addedDate = new Date();
-        let savedList = this._dataService.GetAll<{ [id: number]: MediaModel }>();
+        let savedList = this.fetchStorageItems();
         if (savedList) {
             savedList[item.id] = item;
         } else {
@@ -17,22 +18,40 @@ export class WatchListService implements WatchListServiceBase {
         this._dataService.SaveItem(savedList);
     }
     public remove(item: MediaModel) {
-        const savedList = this._dataService.GetAll<{ [id: number]: MediaModel }>();
+        const savedList = this.fetchStorageItems();
         if (savedList) {
             delete savedList[item.id];
             this._dataService.SaveItem(savedList);
         }
     }
-    public getAll(): MediaModel[] {
-        throw new Error('Method not implemented.');
+
+    public getAll(): Observable<MediaModel[]> {
+        const savedList = this.fetchStorageItems();
+        const watchList = new Observable<MediaModel[]>(observer => {
+            if (savedList) {
+                const arr = [] as MediaModel[];
+                for (const key in savedList) {
+                    if (savedList.hasOwnProperty(key)) {
+                        const element = savedList[key];
+                        arr.push(element);
+                    }
+                }
+                observer.next(arr);
+            }
+        });
+        return watchList;
     }
 
     public contains(item: MediaModel): boolean {
-        const savedList = this._dataService.GetAll<{ [id: number]: MediaModel }>();
+        const savedList = this.fetchStorageItems();
         if (!savedList) {
             return false;
         }
 
         return savedList[item.id] != null;
+    }
+
+    private fetchStorageItems(): { [id: number]: MediaModel } {
+        return this._dataService.GetAll<{ [id: number]: MediaModel }>();
     }
 }

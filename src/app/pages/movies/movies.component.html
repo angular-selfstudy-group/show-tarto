@@ -1,8 +1,5 @@
-<div>
-	watchlist:
-	<ul>
-		<li *ngFor="let movie of watchList">
-			<p>{{ movie.title }}</p>
-		</li>
-	</ul>
+<div class="watch-list">
+    <div class="center-list">
+        <st-moviecard *ngFor="let movie of watchList | async" [Id]='movie.id'></st-moviecard>
+    </div>
 </div>
