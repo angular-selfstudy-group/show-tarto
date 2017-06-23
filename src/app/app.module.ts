@@ -1,12 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@angular/material';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
-import 'hammerjs';
 
 // Components
 import { AppComponent } from './app.component';
@@ -17,6 +12,8 @@ import { PagesModule } from './pages/pages.module';
 // Services
 import { ServicesModule } from 'app/services';
 
+// Shared module
+import { SharedModule } from './shared.module';
 
 @NgModule({
   declarations: [
@@ -24,10 +21,7 @@ import { ServicesModule } from 'app/services';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MaterialModule,
+    SharedModule,
     AppRoutingModule,
     ServicesModule,
     ComponentsModule,

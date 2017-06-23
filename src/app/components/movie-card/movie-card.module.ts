@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
 import { MovieCardComponent } from './movie-card.component'
-import { FormsModule } from '@angular/forms';
 import { ServicesModule } from '../../services';
+import { SharedModule } from './../../shared.module';
 
 
 @NgModule({
-    imports: [CommonModule, MaterialModule, ServicesModule],
+    imports: [SharedModule, ServicesModule],
     exports: [MovieCardComponent],
     declarations: [MovieCardComponent],
     providers: []

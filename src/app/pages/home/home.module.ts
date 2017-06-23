@@ -4,11 +4,11 @@ import { ComponentsModule } from './../../components/components.module';
 import { AutoCompleteComponent } from './../../components/autocomplete/autocomplete.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
+import { MdProgressSpinnerModule } from '@angular/material';
 
 
 @NgModule({
-    imports: [ComponentsModule, FormsModule, CommonModule, MaterialModule],
+    imports: [ComponentsModule, FormsModule, CommonModule, MdProgressSpinnerModule],
     exports: [],
     declarations: [HomeComponent],
     providers: [],

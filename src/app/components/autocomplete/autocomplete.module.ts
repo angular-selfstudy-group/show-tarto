@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { MaterialModule } from '@angular/material';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from './../../shared.module'
 
 import { AutoCompleteComponent } from './autocomplete.component';
 
 @NgModule({
-    imports: [MaterialModule, FormsModule, ReactiveFormsModule, CommonModule],
+    imports: [SharedModule],
     exports: [AutoCompleteComponent],
     declarations: [AutoCompleteComponent],
     providers: [],
