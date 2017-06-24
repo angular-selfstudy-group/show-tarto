@@ -3,7 +3,7 @@
     <div *ngIf="!isLoading">
         <div class="poster" [ngStyle]="{'background-image': 'url('+Model.poster_bg+')'}"></div>
         <div class="content">
-            <div class="releasedate"><i class="material-icons">camera_roll</i> {{ Model.release_date }}</div>
+            <div class="releasedate"><i class="material-icons">camera_roll</i> {{ Model.release_date.toLocaleDateString() }}</div>
             <div class="actions">
                 <button md-button mdTooltip="Add to favorite" [mdTooltipPosition]="tooltipPosition" (click)="favorite($event)"><i class="material-icons">favorite_border</i></button>
                 <button *ngIf="!addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"

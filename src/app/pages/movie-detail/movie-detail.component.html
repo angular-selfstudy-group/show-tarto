@@ -1,12 +1,30 @@
 <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
 <section *ngIf="!isLoading" class="movie-page">
-  <div class="movie-cover-picture" style="background-image: url({{Model.backdrop_image}})"></div>
-  <h1 class="movie-title">{{Model.title}}</h1>
-  <p class="movie-overview">{{Model.overview}}</p>
-  <!--<h3>{{Model.imdb_id}}</h3>-->
-  <h3>{{Model.original_language}}</h3>
-  <h3>{{Model.release_date}}</h3>
-  <h3>{{Model.runtime}}</h3>
-  <h3>{{Model.revenue}}</h3>
-  <h3 *ngFor="let genre of Model.genres">{{genre.name}}</h3>
+  <header class="movie-header">
+    <div class="movie-cover-picture" [ngStyle]="{'background-image': 'url('+Model.poster_bg+')'}"> </div>
+
+    <div class="movie-header-content">
+      <div class="movie-poster-picture" [ngStyle]="{'background-image': 'url('+Model.poster+')'}"></div>
+
+      <div class="movie-primary-texts">
+        <h1 class="movie-title">
+          {{Model.title}}
+          <span class="movie-release-date">{{Model.release_date.getFullYear()}}</span>
+        </h1>
+        <div class="movie-secondary-headline">
+          <span class="movie-genre-text" *ngFor="let genre of Model.genres">
+            <i class="cinema-{{genre.name.toLowerCase()}}"></i>
+            {{genre.name}}</span>
+        </div>
+        <span class="movie-runtime">{{Model.runtime}} min</span>
+      </div>
+    </div>
+  </header>
+  <main class="movie-main">
+    <p class="movie-overview">{{Model.overview}}</p>
+    <h4>{{Model.revenue}}</h4>
+    <h4>{{Model.original_language}}</h4>
+  </main>
+  
+
 </section>

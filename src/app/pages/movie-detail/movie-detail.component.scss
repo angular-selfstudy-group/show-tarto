@@ -1,0 +1,94 @@
+.movie {
+    &-page {
+        position: relative;
+    }
+    &-header {
+        width: 100%;
+        height: 20vw;
+        margin-bottom: 7vw;
+        position: relative;
+        display: flex;
+        align-items: stretch;
+    }
+    &-cover-picture {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: all .3s ease-in-out;
+        filter: brightness(0.6);
+        &:before {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-image: linear-gradient(transparent 7vw, black 22vw)
+        }
+    }
+    &-header-content {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        color: white;
+        font-size: 1.3vw;
+        width: 55%;
+        margin: 0 auto;
+    }
+    &-poster-picture {
+        --box-shadow-color: rgba(0,0,0,.6);
+
+        position: relative;
+        font-size: 1em;
+        height: 15vw;
+        flex: 0 0 10vw;
+        align-self: flex-end;
+        transform: translate(-33%, 33%);
+        transition: all .3s ease-in-out;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        box-shadow: 0.3em 0.3em 1.6em -0.1em var(--box-shadow-color);
+        cursor: pointer;
+        &:hover {
+            font-size: 2em;
+            transform: translate(-33%, 33%) scale(1.1);
+            --box-shadow-color: rgba(0,0,0,.9);
+        }
+    }
+    &-primary-texts {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        padding: 5.2vw 0 2.1vw 0;
+        font-weight: 100;
+    }
+    &-title {
+        font-weight: 100;
+        font-size: 2em;
+        margin: 0;
+        line-height: 1;
+    }
+    &-release-date {
+        font-size: 0.7em;
+        font-weight: 500;
+        margin-left: 1em;
+    }
+    &-genre-text {
+        padding: 0 0.5em;
+        &:first-of-type{
+            padding-left: 0;
+        }
+    }
+
+    &-main {
+        width: 55%;
+        margin: 0 auto;
+    }
+}

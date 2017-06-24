@@ -1,0 +1,528 @@
+@import "font-variables";
+
+@font-face {
+  font-family: 'cinema';
+  src:  url('#{$icomoon-font-path}/cinema.eot?fnppot');
+  src:  url('#{$icomoon-font-path}/cinema.eot?fnppot#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/cinema.ttf?fnppot') format('truetype'),
+    url('#{$icomoon-font-path}/cinema.woff?fnppot') format('woff'),
+    url('#{$icomoon-font-path}/cinema.svg?fnppot#cinema') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="cinema-"], [class*=" cinema-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'cinema' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cinema-action-2 {
+  &:before {
+    content: $cinema-action-2;
+  }
+}
+.cinema-action {
+  &:before {
+    content: $cinema-action;
+  }
+}
+.cinema-add-image {
+  &:before {
+    content: $cinema-add-image;
+  }
+}
+.cinema-add-ticket {
+  &:before {
+    content: $cinema-add-ticket;
+  }
+}
+.cinema-advertising {
+  &:before {
+    content: $cinema-advertising;
+  }
+}
+.cinema-alien {
+  &:before {
+    content: $cinema-alien;
+  }
+}
+.cinema-animation {
+  &:before {
+    content: $cinema-animation;
+  }
+}
+.cinema-apple-tv {
+  &:before {
+    content: $cinema-apple-tv;
+  }
+}
+.cinema-asteroid {
+  &:before {
+    content: $cinema-asteroid;
+  }
+}
+.cinema-astronaut {
+  &:before {
+    content: $cinema-astronaut;
+  }
+}
+.cinema-audience {
+  &:before {
+    content: $cinema-audience;
+  }
+}
+.cinema-av-receiver {
+  &:before {
+    content: $cinema-av-receiver;
+  }
+}
+.cinema-ballet-shoes {
+  &:before {
+    content: $cinema-ballet-shoes;
+  }
+}
+.cinema-binoculars {
+  &:before {
+    content: $cinema-binoculars;
+  }
+}
+.cinema-bunch-flowers {
+  &:before {
+    content: $cinema-bunch-flowers;
+  }
+}
+.cinema-cable-release {
+  &:before {
+    content: $cinema-cable-release;
+  }
+}
+.cinema-camcorder-pro {
+  &:before {
+    content: $cinema-camcorder-pro;
+  }
+}
+.cinema-camcorder {
+  &:before {
+    content: $cinema-camcorder;
+  }
+}
+.cinema-camera-addon {
+  &:before {
+    content: $cinema-camera-addon;
+  }
+}
+.cinema-camera-automation {
+  &:before {
+    content: $cinema-camera-automation;
+  }
+}
+.cinema-camera-identification {
+  &:before {
+    content: $cinema-camera-identification;
+  }
+}
+.cinema-camera {
+  &:before {
+    content: $cinema-camera;
+  }
+}
+.cinema-captain-america {
+  &:before {
+    content: $cinema-captain-america;
+  }
+}
+.cinema-channel-mosaic {
+  &:before {
+    content: $cinema-channel-mosaic;
+  }
+}
+.cinema-clapperboard {
+  &:before {
+    content: $cinema-clapperboard;
+  }
+}
+.cinema-close-up-mode {
+  &:before {
+    content: $cinema-close-up-mode;
+  }
+}
+.cinema-comedy-2 {
+  &:before {
+    content: $cinema-comedy-2;
+  }
+}
+.cinema-comedy {
+  &:before {
+    content: $cinema-comedy;
+  }
+}
+.cinema-comet {
+  &:before {
+    content: $cinema-comet;
+  }
+}
+.cinema-compact-camera {
+  &:before {
+    content: $cinema-compact-camera;
+  }
+}
+.cinema-crime {
+  &:before {
+    content: $cinema-crime;
+  }
+}
+.cinema-dance-with-devil {
+  &:before {
+    content: $cinema-dance-with-devil;
+  }
+}
+.cinema-delete-ticket {
+  &:before {
+    content: $cinema-delete-ticket;
+  }
+}
+.cinema-detective {
+  &:before {
+    content: $cinema-detective;
+  }
+}
+.cinema-documentary {
+  &:before {
+    content: $cinema-documentary;
+  }
+}
+.cinema-drama {
+  &:before {
+    content: $cinema-drama;
+  }
+}
+.cinema-edit-image {
+  &:before {
+    content: $cinema-edit-image;
+  }
+}
+.cinema-facepalm {
+  &:before {
+    content: $cinema-facepalm;
+  }
+}
+.cinema-family {
+  &:before {
+    content: $cinema-family;
+  }
+}
+.cinema-fantasy {
+  &:before {
+    content: $cinema-fantasy;
+  }
+}
+.cinema-film-noir {
+  &:before {
+    content: $cinema-film-noir;
+  }
+}
+.cinema-film-reel {
+  &:before {
+    content: $cinema-film-reel;
+  }
+}
+.cinema-film {
+  &:before {
+    content: $cinema-film;
+  }
+}
+.cinema-gallery {
+  &:before {
+    content: $cinema-gallery;
+  }
+}
+.cinema-grey {
+  &:before {
+    content: $cinema-grey;
+  }
+}
+.cinema-historical {
+  &:before {
+    content: $cinema-historical;
+  }
+}
+.cinema-horror {
+  &:before {
+    content: $cinema-horror;
+  }
+}
+.cinema-idea {
+  &:before {
+    content: $cinema-idea;
+  }
+}
+.cinema-imdb {
+  &:before {
+    content: $cinema-imdb;
+  }
+}
+.cinema-integrated-webcam {
+  &:before {
+    content: $cinema-integrated-webcam;
+  }
+}
+.cinema-iron-man {
+  &:before {
+    content: $cinema-iron-man;
+  }
+}
+.cinema-landscape {
+  &:before {
+    content: $cinema-landscape;
+  }
+}
+.cinema-living-room {
+  &:before {
+    content: $cinema-living-room;
+  }
+}
+.cinema-martian {
+  &:before {
+    content: $cinema-martian;
+  }
+}
+.cinema-moon {
+  &:before {
+    content: $cinema-moon;
+  }
+}
+.cinema-multiple-cameras {
+  &:before {
+    content: $cinema-multiple-cameras;
+  }
+}
+.cinema-music {
+  &:before {
+    content: $cinema-music;
+  }
+}
+.cinema-musical {
+  &:before {
+    content: $cinema-musical;
+  }
+}
+.cinema-news {
+  &:before {
+    content: $cinema-news;
+  }
+}
+.cinema-night-landscape {
+  &:before {
+    content: $cinema-night-landscape;
+  }
+}
+.cinema-night-portrait {
+  &:before {
+    content: $cinema-night-portrait;
+  }
+}
+.cinema-ninja-turtle {
+  &:before {
+    content: $cinema-ninja-turtle;
+  }
+}
+.cinema-no-idea {
+  &:before {
+    content: $cinema-no-idea;
+  }
+}
+.cinema-novel {
+  &:before {
+    content: $cinema-novel;
+  }
+}
+.cinema-old-time-camera {
+  &:before {
+    content: $cinema-old-time-camera;
+  }
+}
+.cinema-opera-glasses {
+  &:before {
+    content: $cinema-opera-glasses;
+  }
+}
+.cinema-panorama {
+  &:before {
+    content: $cinema-panorama;
+  }
+}
+.cinema-planet {
+  &:before {
+    content: $cinema-planet;
+  }
+}
+.cinema-podium-with-audience {
+  &:before {
+    content: $cinema-podium-with-audience;
+  }
+}
+.cinema-podium-with-speaker {
+  &:before {
+    content: $cinema-podium-with-speaker;
+  }
+}
+.cinema-portrait-mode {
+  &:before {
+    content: $cinema-portrait-mode;
+  }
+}
+.cinema-predator {
+  &:before {
+    content: $cinema-predator;
+  }
+}
+.cinema-puzzle {
+  &:before {
+    content: $cinema-puzzle;
+  }
+}
+.cinema-rating {
+  &:before {
+    content: $cinema-rating;
+  }
+}
+.cinema-remove-image {
+  &:before {
+    content: $cinema-remove-image;
+  }
+}
+.cinema-retro-tv {
+  &:before {
+    content: $cinema-retro-tv;
+  }
+}
+.cinema-rotate-camera {
+  &:before {
+    content: $cinema-rotate-camera;
+  }
+}
+.cinema-sci-fi {
+  &:before {
+    content: $cinema-sci-fi;
+  }
+}
+.cinema-scream {
+  &:before {
+    content: $cinema-scream;
+  }
+}
+.cinema-sdtv {
+  &:before {
+    content: $cinema-sdtv;
+  }
+}
+.cinema-selfie {
+  &:before {
+    content: $cinema-selfie;
+  }
+}
+.cinema-short {
+  &:before {
+    content: $cinema-short;
+  }
+}
+.cinema-slr-back-side {
+  &:before {
+    content: $cinema-slr-back-side;
+  }
+}
+.cinema-speaker {
+  &:before {
+    content: $cinema-speaker;
+  }
+}
+.cinema-sport {
+  &:before {
+    content: $cinema-sport;
+  }
+}
+.cinema-sports-mode {
+  &:before {
+    content: $cinema-sports-mode;
+  }
+}
+.cinema-stack-of-photos {
+  &:before {
+    content: $cinema-stack-of-photos;
+  }
+}
+.cinema-starred-ticket {
+  &:before {
+    content: $cinema-starred-ticket;
+  }
+}
+.cinema-start {
+  &:before {
+    content: $cinema-start;
+  }
+}
+.cinema-steve-jobs {
+  &:before {
+    content: $cinema-steve-jobs;
+  }
+}
+.cinema-switch-camera {
+  &:before {
+    content: $cinema-switch-camera;
+  }
+}
+.cinema-theatre-mask {
+  &:before {
+    content: $cinema-theatre-mask;
+  }
+}
+.cinema-thriller {
+  &:before {
+    content: $cinema-thriller;
+  }
+}
+.cinema-ticket {
+  &:before {
+    content: $cinema-ticket;
+  }
+}
+.cinema-undergo-insomnia {
+  &:before {
+    content: $cinema-undergo-insomnia;
+  }
+}
+.cinema-video-file {
+  &:before {
+    content: $cinema-video-file;
+  }
+}
+.cinema-video-projector {
+  &:before {
+    content: $cinema-video-projector;
+  }
+}
+.cinema-watch-tv-in-bed {
+  &:before {
+    content: $cinema-watch-tv-in-bed;
+  }
+}
+.cinema-western {
+  &:before {
+    content: $cinema-western;
+  }
+}
+.cinema-widescreen-tv {
+  &:before {
+    content: $cinema-widescreen-tv;
+  }
+}
