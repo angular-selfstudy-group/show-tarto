@@ -13,10 +13,20 @@
         </h1>
         <div class="movie-secondary-headline">
           <span class="movie-genre-text" *ngFor="let genre of Model.genres">
-            <i class="cinema-{{genre.name.toLowerCase()}}"></i>
+            <i class="movie-genre-icon cinema-{{genre.name.toLowerCase()}}"></i>
             {{genre.name}}</span>
         </div>
         <span class="movie-runtime">{{Model.runtime}} min</span>
+      </div>
+      <div class="movie-action-buttons">
+        <button md-raised-button class="add-to-whatchlist" color="primary">
+          <md-icon>playlist_add</md-icon>
+          Add to watchlist
+        </button>
+        <button  md-raised-button class="add-to-favs" color="accent">
+          <md-icon>favorite_border</md-icon>
+          Add to favourites
+        </button>
       </div>
     </div>
   </header>
@@ -24,6 +34,8 @@
     <p class="movie-overview">{{Model.overview}}</p>
     <h4>{{Model.revenue}}</h4>
     <h4>{{Model.original_language}}</h4>
+    <h4>{{Model.popularity}}</h4>
+    <h4>{{Model.vote_average}}</h4>
   </main>
   
 
