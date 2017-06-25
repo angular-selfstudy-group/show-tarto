@@ -14,7 +14,8 @@
         <div class="movie-secondary-headline">
           <span class="movie-genre-text" *ngFor="let genre of Model.genres">
             <i class="movie-genre-icon cinema-{{genre.name.toLowerCase()}}"></i>
-            {{genre.name}}</span>
+            {{genre.name}}
+          </span>
         </div>
         <span class="movie-runtime">{{Model.runtime}} min</span>
       </div>

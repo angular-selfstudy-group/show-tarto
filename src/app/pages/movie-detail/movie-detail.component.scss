@@ -1,7 +1,13 @@
+@import '~@angular/material/theming';
+@import 'src/styles/theme.scss';
+
 .movie {
     &-page {
         position: relative;
-        font-size: 1.1rem;
+        font-size: 1em;
+        @media screen and (max-width: 1099px) {
+            font-size: 0.9rem;
+        }
     }
     &-header {
         width: 100%;
@@ -29,7 +35,9 @@
             top: 0;
             right: 0;
             left: 0;
-            background-image: linear-gradient(transparent 5em, black 19em)
+            background-image: 
+            linear-gradient( transparent -5em, 
+            mat-color($accent, 500) 16em)
         }
     }
     &-header-content {
@@ -54,7 +62,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        border-radius: 0.9em;
+        border-radius: 0.6em;
         box-shadow: 0.3em 0.3em 1.6em -0.1em var(--box-shadow-color);
         cursor: pointer;
         &:hover {
@@ -84,17 +92,19 @@
     }
     &-genre {
         &-text {
-            padding: 0 0.5em;
-            font-size: 1.2em;
-            &:first-of-type{
-                padding-left: 0;
-            }
+            display: inline-block;
+            line-height: 2;
+            padding: 0 0.8em;
+            font-size: 0.9em;
+            border: 0.01em solid mat-color($primary);
+            margin-right: 0.5em;
+            border-radius: 5em;
         }
         &-icon {
-            color: coral;
+            color: mat-color($primary);
             font-size: 1.2em;
             vertical-align: text-bottom;
-            padding-right: 0.5em;
+            padding-right: 0.1em;
         }
     }
     &-action-buttons {

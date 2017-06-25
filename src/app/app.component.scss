@@ -1,5 +1,9 @@
+@import '~@angular/material/theming';
+@import 'src/styles/theme.scss';
+
 md-sidenav-container {
     height: 100%;
+    font-size: 1.1em;
 }
 
 md-sidenav {
@@ -10,7 +14,7 @@ md-sidenav {
 
     h3 {
         background: rgba(0,0,0,.32);
-        color: #fff;
+        color: mat-color($primary);
         border: none;
         font-size: 12px;
         letter-spacing: 1px;
@@ -40,19 +44,19 @@ md-sidenav {
             padding: 0;
             
             a {
-                color: rgba(0,0,0,.54);
+                color: mat-color($primary, 100);
                 display: block;
                 font-size: 14px;
-                font-weight: 400;
+                font-weight: 200;
                 line-height: 47px;
                 text-decoration: none;
-                transition: all .3s;
+                transition: all .1s;
                 padding: 0 16px;
                 position: relative;
 
                 &:hover {
-                    background: #fafafa;
-                    color: #00bcd4;
+                    color: mat-color($primary);
+                    background-color: rgba(0,0,0,.1);
                 }
             }
         }

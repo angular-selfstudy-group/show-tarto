@@ -7,13 +7,19 @@
 
     .center-list{
         margin: 0 auto;
-        padding: 1%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 1em;
 
         st-moviecard {
-            width: 19%;
-            height: 23vw;
+            flex: 0 0 calc(20% - 0.8em);
+            height: 24vw;
+            margin-right: 1em;
+            margin-bottom: 1em;
+            &:nth-child(5n) {
+                margin-right: 0;
+            }
         }
     }
 }
