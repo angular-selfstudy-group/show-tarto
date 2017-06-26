@@ -1,20 +1,24 @@
+@import '~@angular/material/theming';
+@import 'src/styles/theme.scss';
+
 .card {
     padding: 0;
     height: 100%;
     color: #fff;
     cursor: pointer;
     user-select: none;
+    font-size: 1em;
 
     &:hover {
 
       .poster {
-        filter: brightness(0.4);
+        filter: brightness(0.3);
       }
 
       .content {
 
         .title .plot {
-          max-height: 300px;
+          max-height: 6vw;
           visibility: visible;
         }
       }
@@ -34,6 +38,18 @@
       bottom: 0;
       left: 0;
       transition: filter 150ms ease-in;
+      filter: brightness(0.8);
+
+      &:before {
+        position: absolute;
+        content: '';
+        font-size: 1em;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-image: linear-gradient(transparent -2em, mat-color($accent, 500) 19em);
+      }
     }
 
     .content {
@@ -42,40 +58,28 @@
       right: 0;
       bottom: 0;
       left: 0;
+      font-size: 1em;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       z-index: 1;
       overflow: hidden;
 
-      .releasedate,
-      .actions {
-        position: absolute;
-        top: 2%;
+      &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
         font-size: 0.8em;
-        font-weight: lighter;
-      }
-
-      .releasedate {
-        left: 4%;
-      }
-
-      .actions {
-        right: 4%;
-        top: 0;
-
-        .mat-button {
-          min-width: 30px;
-          padding: 0 5px;
-        }
       }
 
       .title {
-        position: absolute;
-        bottom: 2%;
-        left: 4%;
-        right: 4%;
-        font-size: 2em;
+        font-size: 1em;
+        font-weight: 300;
+        color: mat-color($primary, 100);
 
         .plot {
-          font-size: 0.4em;
+          font-size: 0.6em;
           max-height: 0;
           visibility: hidden;
           transition: all 150ms ease-in;

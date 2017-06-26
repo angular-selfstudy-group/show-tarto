@@ -10,14 +10,15 @@
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
-        padding: 1em;
+        width: 55%;
+        padding: 1em 0;
 
         st-moviecard {
-            flex: 0 0 calc(20% - 0.8em);
-            height: 24vw;
+            flex: 0 0 calc(25% - 0.75em);
+            height: 17vw;
             margin-right: 1em;
             margin-bottom: 1em;
-            &:nth-child(5n) {
+            &:nth-child(4n) {
                 margin-right: 0;
             }
         }

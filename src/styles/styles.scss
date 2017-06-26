@@ -12,11 +12,13 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Roboto,"Helvetica Neue",sans-serif;
-    & .mat-button,
-    & .mat-fab,
-    & .mat-icon-button,
-    & .mat-mini-fab,
-    & .mat-raised-button {
+    button[class*="mat-"][class*="-fab"],
+    button[class*="mat-"][class*="-button"] {
+    // & .mat-button,
+    // & .mat-fab,
+    // & .mat-icon-button,
+    // & .mat-mini-fab,
+    // & .mat-raised-button {
         font-size: 1rem;
         min-width: 5.5em;
         line-height: 2.25em;

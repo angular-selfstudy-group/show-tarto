@@ -99,6 +99,7 @@
             border: 0.01em solid mat-color($primary);
             margin-right: 0.5em;
             border-radius: 5em;
+            text-transform: capitalize;
         }
         &-icon {
             color: mat-color($primary);

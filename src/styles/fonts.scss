@@ -25,10 +25,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.cinema-action-2 {
+.cinema-war {
   &:before {
-    content: $cinema-action-2;
+    content: $cinema-war;
   }
 }
 .cinema-action {
@@ -166,9 +165,9 @@
     content: $cinema-comedy;
   }
 }
-.cinema-comet {
+.cinema-adventure {
   &:before {
-    content: $cinema-comet;
+    content: $cinema-adventure;
   }
 }
 .cinema-compact-camera {
@@ -181,9 +180,9 @@
     content: $cinema-crime;
   }
 }
-.cinema-dance-with-devil {
+.cinema-romance {
   &:before {
-    content: $cinema-dance-with-devil;
+    content: $cinema-romance;
   }
 }
 .cinema-delete-ticket {
@@ -246,9 +245,9 @@
     content: $cinema-gallery;
   }
 }
-.cinema-grey {
+.cinema-mystery {
   &:before {
-    content: $cinema-grey;
+    content: $cinema-mystery;
   }
 }
 .cinema-historical {
@@ -401,9 +400,9 @@
     content: $cinema-remove-image;
   }
 }
-.cinema-retro-tv {
+.cinema-tv-movie {
   &:before {
-    content: $cinema-retro-tv;
+    content: $cinema-tv-movie;
   }
 }
 .cinema-rotate-camera {
@@ -411,9 +410,9 @@
     content: $cinema-rotate-camera;
   }
 }
-.cinema-sci-fi {
+.cinema-science-fiction {
   &:before {
-    content: $cinema-sci-fi;
+    content: $cinema-science-fiction;
   }
 }
 .cinema-scream {

@@ -38,7 +38,7 @@ export class SearchService extends SearchServiceBase {
                         type: json.media_type,
                         title: json.name || json.title,
                         year: this.getYearIfAny(json),
-                        posterUrl: this.getDefaultPosterIfEmpty(json.backdrop_path || json.poster_path, '500')
+                        posterUrl: this.getDefaultPosterIfEmpty(json.poster_path, '500')
                     } as Show;
                 })
             );
@@ -74,7 +74,10 @@ export class SearchService extends SearchServiceBase {
                     title: json.title,
                     poster: this.getDefaultPosterIfEmpty(json.poster_path, '500'),
                     poster_bg: this.getDefaultPosterIfEmpty(json.backdrop_path, '1920'),
-                    genres: json.genres,
+                    genres: json.genres.map((genre) => ({
+                        id: genre.id,
+                        name: genre.name.toLowerCase().replace(" ", "-")
+                    })),
                     overview: json.overview,
                     original_language: json.original_language.toUpperCase(),
                     popularity: json.popularity,
