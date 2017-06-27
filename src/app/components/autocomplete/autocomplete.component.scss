@@ -1,5 +1,19 @@
+md-card {
+	display: block;
+	width: 55%;
+	margin: 0 auto;
+	padding: 1.5em 4em;
+	margin-top: 1em;
+	font-size: 1.3em;
+}
+
 md-input-container {
 	width: 100%;
+
+	md-icon {
+		vertical-align: middle;
+		margin-right: 1em;
+	}
 }
 
 md-option {

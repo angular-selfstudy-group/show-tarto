@@ -38,7 +38,7 @@ export class SearchService extends SearchServiceBase {
                         type: json.media_type,
                         title: json.name || json.title,
                         year: this.getYearIfAny(json),
-                        posterUrl: this.getDefaultPosterIfEmpty(json.backdrop_path || json.poster_path, '500')
+                        posterUrl: this.getDefaultPosterIfEmpty(json.poster_path, '500')
                     } as Show;
                 })
             );
@@ -73,14 +73,17 @@ export class SearchService extends SearchServiceBase {
                     imdb_id: json.imdb_id,
                     title: json.title,
                     poster: this.getDefaultPosterIfEmpty(json.poster_path, '500'),
-                    poster_bg: this.getDefaultPosterIfEmpty(json.backdrop_path, '1000'),
-                    genres: json.genres,
+                    poster_bg: this.getDefaultPosterIfEmpty(json.backdrop_path, '1920'),
+                    genres: json.genres.map((genre) => ({
+                        id: genre.id,
+                        name: genre.name.toLowerCase().replace(" ", "-")
+                    })),
                     overview: json.overview,
-                    original_language: json.original_language,
+                    original_language: json.original_language.toUpperCase(),
                     popularity: json.popularity,
-                    release_date: json.release_date,
+                    release_date: new Date(json.release_date),
                     runtime: json.runtime,
-                    revenue: json.revenue,
+					revenue: this.convertRevenue(json.revenue),
                     vote_average: json.vote_average
                 } as MovieDetailModel;
             });
@@ -102,6 +105,12 @@ export class SearchService extends SearchServiceBase {
             });
     }
 
+    private convertRevenue(x: number) {
+        const convertedRevenue = x 
+            ? `${x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} $`
+            : "Unknown"
+        return convertedRevenue;
+    }
     private getDefaultPosterIfEmpty(uri: string, size: string) {
         if (!uri) {
             return '../../../assets/placeholder-image.png'

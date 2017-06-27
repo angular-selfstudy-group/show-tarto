@@ -1,0 +1,126 @@
+@import '~@angular/material/theming';
+@import 'src/styles/theme.scss';
+
+.movie {
+    &-page {
+        position: relative;
+        font-size: 1em;
+        @media screen and (max-width: 1099px) {
+            font-size: 0.9rem;
+        }
+    }
+    &-header {
+        width: 100%;
+        font-size: 1em;
+        height: 15em;
+        margin-bottom: 6em;
+        position: relative;
+        display: flex;
+        align-items: stretch;
+    }
+    &-cover-picture {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: all .3s ease-in-out;
+        filter: brightness(0.6);
+        &:before {
+            position: absolute;
+            content: '';
+            font-size: 1em;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-image: 
+            linear-gradient( transparent -5em, 
+            mat-color($accent, 500) 16em)
+        }
+    }
+    &-header-content {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        color: white;
+        font-size: 1em;
+        width: 55%;
+        margin: 0 auto;
+    }
+    &-poster-picture {
+        --box-shadow-color: rgba(0,0,0,.6);
+
+        position: relative;
+        font-size: 1em;
+        height: 13em;
+        flex: 0 0 9em;
+        align-self: flex-end;
+        transform: translateY(33%);
+        transition: all .3s ease-in-out;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 0.6em;
+        box-shadow: 0.3em 0.3em 1.6em -0.1em var(--box-shadow-color);
+        cursor: pointer;
+        &:hover {
+            transform: translateY(33%) scale(1.07);
+            --box-shadow-color: rgba(0,0,0,.9);
+        }
+    }
+    &-primary-texts {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        padding: 4.2em 0 0.7em 2em;
+        font-weight: 100;
+    }
+    &-title {
+        font-weight: 100;
+        font-size: 2em;
+        margin: 0;
+        line-height: 1;
+    }
+    &-release-date {
+        font-size: 0.9em;
+        font-weight: 500;
+        margin-left: 1em;
+    }
+    &-genre {
+        &-text {
+            display: inline-block;
+            line-height: 2;
+            padding: 0 0.8em;
+            font-size: 0.9em;
+            border: 0.01em solid mat-color($primary);
+            margin-right: 0.5em;
+            border-radius: 5em;
+            text-transform: capitalize;
+        }
+        &-icon {
+            color: mat-color($primary);
+            font-size: 1.2em;
+            vertical-align: text-bottom;
+            padding-right: 0.1em;
+        }
+    }
+    &-action-buttons {
+        position: absolute;
+        bottom: 0;
+        left: 11em;
+        transform: translateY(150%);
+        font-size: 1em;
+
+        button {
+            font-size: 1em;
+        }
+    }
+    &-main {
+        width: 55%;
+        margin: 0 auto;
+    }
+}

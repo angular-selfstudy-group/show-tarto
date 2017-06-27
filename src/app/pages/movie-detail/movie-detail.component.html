@@ -1,6 +1,42 @@
 <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
-<md-list *ngIf="!isLoading">
-  <md-list-item>{{Model.title}}</md-list-item>
-  <md-list-item>{{Model.overview}}</md-list-item>
-  <img src="{{Model.poster}}" >
-</md-list>
+<section *ngIf="!isLoading" class="movie-page">
+  <header class="movie-header">
+    <div class="movie-cover-picture" [ngStyle]="{'background-image': 'url('+Model.poster_bg+')'}"> </div>
+
+    <div class="movie-header-content">
+      <div class="movie-poster-picture" [ngStyle]="{'background-image': 'url('+Model.poster+')'}"></div>
+
+      <div class="movie-primary-texts">
+        <h1 class="movie-title">
+          {{Model.title}}
+          <span class="movie-release-date">{{Model.release_date.getFullYear()}}</span>
+        </h1>
+        <div class="movie-secondary-headline">
+          <span class="movie-genre-text" *ngFor="let genre of Model.genres">
+            <i class="movie-genre-icon cinema-{{genre.name.toLowerCase()}}"></i>
+            {{genre.name}}
+          </span>
+        </div>
+        <span class="movie-runtime">{{Model.runtime}} min</span>
+      </div>
+      <div class="movie-action-buttons">
+        <button md-raised-button class="add-to-whatchlist" color="primary">
+          <md-icon>playlist_add</md-icon>
+          Add to watchlist
+        </button>
+        <button  md-raised-button class="add-to-favs" color="accent">
+          <md-icon>favorite_border</md-icon>
+          Add to favourites
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="movie-main">
+    <p class="movie-overview">{{Model.overview}}</p>
+    <h4>{{Model.revenue}}</h4>
+    <h4>{{Model.original_language}}</h4>
+    <h4>{{Model.vote_average}}</h4>
+  </main>
+  
+
+</section>

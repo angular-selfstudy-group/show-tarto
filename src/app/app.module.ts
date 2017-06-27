@@ -14,6 +14,7 @@ import { ServicesModule } from 'app/services';
 
 // Shared module
 import { SharedModule } from './shared.module';
+import { MaterialComponentsModule } from "app/material.components.module";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SharedModule } from './shared.module';
   imports: [
     BrowserModule,
     SharedModule,
+    MaterialComponentsModule,
     AppRoutingModule,
     ServicesModule,
     ComponentsModule,

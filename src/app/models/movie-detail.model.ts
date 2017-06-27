@@ -10,8 +10,8 @@ export interface MovieDetailModel extends MediaModel {
     overview: string;
     original_language: string;
     popularity: number;
-    release_date: string;
+    release_date: string | Date;
     runtime: number;
-    revenue: number;
+    revenue: number | string;
     vote_average: number;
 }

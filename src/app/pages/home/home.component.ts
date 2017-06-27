@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
         this.isLoading = true;
         this._searchService.GetPopularMovies().subscribe(results => {
             const maxIndex = results.length - 1;
-            const itemsToShow = 5;
+            const itemsToShow = 10;
             const randomIndex = Math.floor(Math.random() * (maxIndex - itemsToShow)) + itemsToShow;
             this.popularMovies = results.slice(randomIndex - itemsToShow, randomIndex);
             this.isLoading = false;

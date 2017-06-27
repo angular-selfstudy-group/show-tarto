@@ -3,17 +3,27 @@
     <div *ngIf="!isLoading">
         <div class="poster" [ngStyle]="{'background-image': 'url('+Model.poster_bg+')'}"></div>
         <div class="content">
-            <div class="releasedate"><i class="material-icons">camera_roll</i> {{ Model.release_date }}</div>
-            <div class="actions">
-                <button md-button mdTooltip="Add to favorite" [mdTooltipPosition]="tooltipPosition" (click)="favorite($event)"><i class="material-icons">favorite_border</i></button>
-                <button *ngIf="!addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
-                    [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)"><i class="material-icons">playlist_add</i></button>
-                <button *ngIf="addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
-                    [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)"><i class="material-icons">remove</i></button>
+            <div class="content-top">
+                <div class="releasedate"><i class="material-icons">camera_roll</i> {{ Model.release_date.getFullYear() }}</div>
+                <div class="actions">
+                    <div mdTooltip="Add to favorite" [mdTooltipPosition]="tooltipPosition" (click)="favorite($event)">
+                        <i class="material-icons">favorite_border</i>
+                    </div>
+                    <div *ngIf="!addedToWatchList" mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
+                        [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+                        <i class="material-icons">playlist_add</i>
+                    </div>
+                    <div *ngIf="addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
+                        [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+                        <i class="material-icons">remove</i>
+                    </div>
+                </div>
             </div>
-            <div class="title">
-                {{ Model.title }}
-                <div class="plot">{{ Model.overview }}</div>
+            <div class="title-plot">
+                <h1 class="title">
+                    {{ Model.title }}
+                </h1>
+                <p class="plot">{{ Model.overview }}</p>
             </div>
         </div>
     </div>
