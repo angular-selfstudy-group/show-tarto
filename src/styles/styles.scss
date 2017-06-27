@@ -32,3 +32,10 @@ body {
         width: 1em;
     }
 }
+
+.container {
+    display: block;
+    width: calc(100% - 10rem);
+    max-width: 58rem;
+    margin: 0 auto;
+}

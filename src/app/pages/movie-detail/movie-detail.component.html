@@ -3,7 +3,7 @@
   <header class="movie-header">
     <div class="movie-cover-picture" [ngStyle]="{'background-image': 'url('+Model.poster_bg+')'}"> </div>
 
-    <div class="movie-header-content">
+    <div class="movie-header-content container">
       <div class="movie-poster-picture" [ngStyle]="{'background-image': 'url('+Model.poster+')'}"></div>
 
       <div class="movie-primary-texts">
@@ -31,7 +31,7 @@
       </div>
     </div>
   </header>
-  <main class="movie-main">
+  <main class="movie-main container">
     <p class="movie-overview">{{Model.overview}}</p>
     <h4>{{Model.revenue}}</h4>
     <h4>{{Model.original_language}}</h4>
