@@ -89,6 +89,33 @@ export class SearchService extends SearchServiceBase {
             });
     }
 
+    public GetSerieDetails(id: number): Observable<MovieDetailModel> {
+        const uri = `/tv/${id}`;
+
+        return this.getJSONP(uri)
+            .map(json => {
+                return {
+                    id: json.id,
+                    type: json.media_type,
+                    imdb_id: json.imdb_id,
+                    title: json.title,
+                    poster: this.getDefaultPosterIfEmpty(json.poster_path, '500'),
+                    poster_bg: this.getDefaultPosterIfEmpty(json.backdrop_path, '1920'),
+                    genres: json.genres.map((genre) => ({
+                        id: genre.id,
+                        name: genre.name.toLowerCase().replace(" ", "-")
+                    })),
+                    overview: json.overview,
+                    original_language: json.original_language.toUpperCase(),
+                    popularity: json.popularity,
+                    release_date: new Date(json.release_date),
+                    runtime: json.runtime,
+					revenue: this.convertRevenue(json.revenue),
+                    vote_average: json.vote_average
+                } as MovieDetailModel;
+            });
+    }
+
     private getYearIfAny(json): number {
         if (json.release_date || json.first_air_date) {
             return new Date(json.release_date || json.first_air_date).getFullYear();
