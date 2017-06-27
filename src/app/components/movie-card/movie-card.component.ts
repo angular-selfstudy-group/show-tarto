@@ -28,6 +28,7 @@ export class MovieCardComponent implements OnInit {
         if (this.Id) {
             this._searchService.GetMovieDetails(this.Id).subscribe(m => {
                 this.Model = m;
+                this.Model.overview = this.Model.overview.length > 65 ? this.Model.overview.substr(0, 65) + "..." : this.Model.overview;
                 this.isLoading = false;
                 this.addedToWatchList = this._watchlistService.contains(this.Model);
                 this.tooltipText = this.addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist';
