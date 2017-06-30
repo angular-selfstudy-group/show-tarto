@@ -1,7 +1,7 @@
 <div class="card-holder">
-    <md-card class="card" (click)="cardClick()">
-        <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
-            <div class="content">
+    <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
+    <md-card class="card" *ngIf="!isLoading" (click)="cardClick()">
+            <div class="content" >
                 <div class="poster" [ngStyle]="{'background-image': 'url('+Model.poster_bg+')'}"></div>
                 <div class="content-top">
                     <div class="releasedate"><i class="material-icons">camera_roll</i> {{ Model.release_date.getFullYear() }}</div>
