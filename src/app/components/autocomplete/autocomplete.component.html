@@ -7,20 +7,21 @@
 	<md-autocomplete #auto [displayWith]="displayResultInSearchbox">
 		<md-option *ngFor="let show of showSearchResults | async" [value]="show" >
 			<div class="show-result">
-				<img class="poster" src="{{show.posterUrl}}"/>
 				<div class="title-buttons-container">
-					<span class="title">{{ show.title }}</span>
-					<div class="buttons">
-						<button md-icon-button color="primary" (click)="addToWatchList(show)" title="Add to watchlist">
-							<md-icon>playlist_add</md-icon>
-						</button>
-						<button md-icon-button color="accent" title="Add to favourites">
-							<md-icon>favorite_border</md-icon>
-						</button>
-					</div>
+					<img class="poster" src="{{show.posterUrl}}"/>
+					<span class="title" title="{{ show.title }}">{{ show.title }}</span>
+					<br>
+					<span class="year">{{ show.year }}</span>
 				</div>
-				<span class="year">{{ show.year }}</span>
-			</div>			
+				<div class="buttons">
+					<button md-icon-button color="accent" title="Add to favourites">
+						<md-icon>favorite_border</md-icon>
+					</button>
+					<button md-icon-button color="primary" (click)="addToWatchList(show)" title="Add to watchlist">
+						<md-icon>playlist_add</md-icon>
+					</button>
+				</div>
+			</div>
 		</md-option>
 	</md-autocomplete>
 
