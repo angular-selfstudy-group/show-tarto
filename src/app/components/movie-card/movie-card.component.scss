@@ -3,6 +3,12 @@
 
 $cardMainFontColor: lighten(mat-color($primary), 10%);
 
+:host {
+    flex: 0 0 10.96em;
+    height: 15em;
+    font-size: 1em;
+}
+
 .card-holder {
   position: relative;
   height: 100%;
@@ -78,6 +84,7 @@ $cardMainFontColor: lighten(mat-color($primary), 10%);
         align-items: flex-start;
         font-size: 0.8em;
         z-index: 1;
+        flex: 0 0 10%;
       }
 
       .releasedate{
@@ -92,20 +99,24 @@ $cardMainFontColor: lighten(mat-color($primary), 10%);
       }
       .actions {
         display: flex;
-        flex: 0 1 35%;
+        flex: 0 1 3.4em;
         justify-content: space-between;
         
       }
 
       .title-plot {
         position: relative;
-        height: 75%;
+        flex: 3 1 90%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        top: 3.6em;
+        top: calc(50% + 0.6em);
         transition: all 150ms ease-in;
         overflow: hidden;
+
+        & > * {
+          flex: 1 1 50%;
+        }
       }
 
       .title {
@@ -113,11 +124,16 @@ $cardMainFontColor: lighten(mat-color($primary), 10%);
         font-weight: 300;
         color: $cardMainFontColor;
         margin: 0;
+        
+        display: flex;
+        align-items: flex-end;
       }
       .plot {
           font-size: 0.7em;
-          margin-bottom: 0;
-          height: 30%;
+          margin: 0;
+          padding-top: 1em;
+          display: flex;
+          align-items: flex-end;
       }
     }
 }

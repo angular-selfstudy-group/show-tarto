@@ -7,3 +7,8 @@ $warn:    mat-palette($mat-red, 500, 200, 700);
 
 $app-theme: mat-dark-theme($primary, $accent, $warn);
 @include angular-material-theme($app-theme);
+
+$light-theme:   mat-light-theme($primary, $accent, $warn);
+.light-theme {
+  @include angular-material-theme($light-theme);
+}
