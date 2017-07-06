@@ -36,7 +36,7 @@ export class MovieCardComponent implements OnInit {
         }
     }
 
-    private cardClick() {
+    public cardClick() {
         this.router.navigate(['movies/', this.Model.id]);
     }
 
