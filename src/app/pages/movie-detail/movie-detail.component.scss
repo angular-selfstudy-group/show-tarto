@@ -46,8 +46,6 @@
         align-items: flex-end;
         color: white;
         font-size: 1em;
-        width: 55%;
-        margin: 0 auto;
     }
     &-poster-picture {
         --box-shadow-color: rgba(0,0,0,.6);
@@ -118,9 +116,5 @@
         button {
             font-size: 1em;
         }
-    }
-    &-main {
-        width: 55%;
-        margin: 0 auto;
     }
 }

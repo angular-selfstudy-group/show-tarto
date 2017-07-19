@@ -1,38 +1,35 @@
-<md-card>
-	<md-input-container>
-		<input type="search" mdInput [formControl]="searchInput" placeholder="Search show" [mdAutocomplete]="auto">
-		<md-icon mdPrefix>search</md-icon>
-	</md-input-container>
+<md-input-container>
+	<input type="search" mdInput [formControl]="searchInput" placeholder="Search show" [mdAutocomplete]="auto">
+	<md-icon mdPrefix>search</md-icon>
+</md-input-container>
 
-	<md-autocomplete #auto [displayWith]="displayResultInSearchbox">
-		<md-option *ngFor="let show of showSearchResults | async" [value]="show" >
-			<div class="show-result">
-				<div class="title-buttons-container">
-					<img class="poster" src="{{show.posterUrl}}"/>
-					<span class="title" title="{{ show.title }}">{{ show.title }}</span>
-					<br>
-					<span class="year">{{ show.year }}</span>
-				</div>
+<md-autocomplete #auto [displayWith]="displayResultInSearchbox">
+	<md-option *ngFor="let show of showSearchResults | async" [value]="show" >
+		<div class="show-result">
+			<img class="poster" src="{{show.posterUrl}}"/>
+			<div class="title-buttons-container">
+				<span class="title">{{ show.title }}</span>
 				<div class="buttons">
-					<button md-icon-button color="accent" title="Add to favourites">
-						<md-icon>favorite_border</md-icon>
-					</button>
 					<button md-icon-button color="primary" (click)="addToWatchList(show)" title="Add to watchlist">
 						<md-icon>playlist_add</md-icon>
 					</button>
+					<button md-icon-button color="accent" title="Add to favourites">
+						<md-icon>favorite_border</md-icon>
+					</button>
 				</div>
 			</div>
-		</md-option>
-	</md-autocomplete>
+			<span class="year">{{ show.year }}</span>
+		</div>			
+	</md-option>
+</md-autocomplete>
 
-	<div *ngIf="searchInput.value && searchInput.value.title">
-		<button md-raised-button color="primary" (click)="addToWatchList(searchInput.value)">
-			<md-icon>playlist_add</md-icon>
-			Add to watchlist
-		</button>
-		<button md-raised-button color="accent">
-			<md-icon>favorite_border</md-icon>
-			Add to favourites
-		</button>
-	</div>
-</md-card>
+<div *ngIf="searchInput.value && searchInput.value.title">
+	<button md-raised-button color="primary" (click)="addToWatchList(searchInput.value)">
+		<md-icon>playlist_add</md-icon>
+		Add to watchlist
+	</button>
+	<button md-raised-button color="accent">
+		<md-icon>favorite_border</md-icon>
+		Add to favourites
+	</button>
+</div>

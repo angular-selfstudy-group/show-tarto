@@ -1,10 +1,10 @@
-<st-autocomplete></st-autocomplete>
-
-<div class="popular-list">
-    <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
-    <div *ngIf="!isLoading" class="center-list">
-        <st-moviecard *ngFor="let movie of popularMovies" [Id]='movie.id'></st-moviecard>
+<main class="container">
+    <st-autocomplete class="app-search"></st-autocomplete>
+    <div class="popular-list">
+        <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
+        <div *ngIf="!isLoading" class="center-list">
+            <st-moviecard *ngFor="let movie of popularMovies" [Id]='movie.id'></st-moviecard>
+        </div>
     </div>
-</div>
-
+</main>
 <!-- TODO most popular / recently added / watch list cards components -->
