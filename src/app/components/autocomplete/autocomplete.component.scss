@@ -8,28 +8,68 @@ md-input-container {
 }
 
 md-option {
-	$option-height: 75px;
-	$option-padding: 5px;
+
+	$option-height: 4.688em;
+	$option-padding: .313em;
 
 	height: $option-height;
 
 	.show-result {
 		padding: $option-padding 0;
 		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
 		.poster {
 			object-fit: cover;
 			width: $option-height * 2 / 3;
 			height: $option-height - 2 * $option-padding;
+			float: left;
+			margin: 0 .625em 0 0;
 		}
 
 		.title-buttons-container {
-			padding: 10px 0 0 10px;
+			padding: 0;
 			line-height: 1em;
+			float: left;
+
+			.title {
+				max-width: 80%;
+				text-overflow: ellipsis;
+				display: inline-block;
+				overflow: hidden;
+			}
+		}
+
+		.buttons {
+			position: absolute;
+		    bottom: -0.25em;
+			left: 4.5em;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity .25s linear, 
+			visibility .1s linear .5s;
+
+			button {
+				margin: 0;
+				padding: 0;
+				min-width: 0;
+			}
 		}
 
 		.year {
-			margin-left: auto;
+			font-weight: 400;
+			font-size: .75em;
+		}
+	}
+
+	&:hover {
+		.show-result {
+			.buttons {
+				float: right;
+				opacity: 1;
+				visibility: visible;
+			}
 		}
 	}
 }
