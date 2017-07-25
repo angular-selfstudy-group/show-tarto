@@ -1,30 +1,38 @@
 <div class="card-holder">
     <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
-    <md-card class="card" *ngIf="!isLoading" (click)="cardClick()">
-            <div class="content" >
-                <div class="poster" [ngStyle]="{'background-image': 'url('+Model.poster_bg+')'}"></div>
-                <div class="content-top">
-                    <div class="releasedate"><i class="material-icons">camera_roll</i> {{ Model.release_date.getFullYear() }}</div>
-                    <div class="actions">
-                        <div mdTooltip="Add to favorite" [mdTooltipPosition]="tooltipPosition" (click)="favorite($event)">
-                            <i class="material-icons">favorite_border</i>
-                        </div>
-                        <div *ngIf="!addedToWatchList" mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
-                            [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
-                            <i class="material-icons">playlist_add</i>
-                        </div>
-                        <div *ngIf="addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
-                            [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
-                            <i class="material-icons">remove</i>
-                        </div>
+
+    <md-card *ngIf="!isLoading" (click)="cardClick()">
+        <section class="content">
+            <div class="poster" [ngStyle]="{'background-image': 'url('+Model.poster_bg+')'}"></div>
+            <header class="content-top">
+                <md-card-subtitle>
+                    <i class="material-icons">camera_roll</i>  
+                    {{ Model.release_date.getFullYear() }}
+                </md-card-subtitle>
+                <md-card-actions>
+                    <div mdTooltip="Add to favorite" [mdTooltipPosition]="tooltipPosition" (click)="favorite($event)">
+                        <i class="material-icons">favorite_border</i>
                     </div>
-                </div>
-                <div class="title-plot">
-                    <h1 class="title">
-                        {{ Model.title }}
-                    </h1>
-                    <p class="plot">{{ Model.overview }}</p>
-                </div>
-            </div>
+                    <div *ngIf="!addedToWatchList" mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
+                        [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+                        <i class="material-icons">playlist_add</i>
+                    </div>
+                    <div *ngIf="addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
+                        [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+                        <i class="material-icons">remove</i>
+                    </div>
+                </md-card-actions>
+            </header>
+            <md-card-content>
+                <md-card-title>
+                    <h1> {{ Model.title }} </h1>
+                </md-card-title>
+                <md-card-footer>
+                    <p>
+                        {{ Model.overview }}
+                    </p>
+                </md-card-footer>
+            </md-card-content>
+        </section>
     </md-card>
 </div>

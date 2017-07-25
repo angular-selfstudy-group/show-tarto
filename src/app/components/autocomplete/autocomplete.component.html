@@ -3,7 +3,7 @@
 	<md-icon mdPrefix>search</md-icon>
 </md-input-container>
 
-<md-autocomplete #auto [displayWith]="displayResultInSearchbox">
+<md-autocomplete #auto="mdAutocomplete" [displayWith]="displayResultInSearchbox">
 	<md-option *ngFor="let show of showSearchResults | async" [value]="show" >
 		<div class="show-result">
 			<img class="poster" src="{{show.posterUrl}}"/>
