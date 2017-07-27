@@ -24,5 +24,4 @@ export class MovieDetailComponent implements OnInit {
       this.isLoading = false;
     });
   }
-
 }

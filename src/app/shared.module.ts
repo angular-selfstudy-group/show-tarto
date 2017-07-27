@@ -9,7 +9,7 @@ import 'hammerjs';
     imports: [CommonModule],
     exports: [
         CommonModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule
-            ],
+    ],
     providers: [],
     bootstrap: []
 })

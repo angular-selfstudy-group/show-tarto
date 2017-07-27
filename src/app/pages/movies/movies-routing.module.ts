@@ -1,13 +1,32 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MoviesComponent } from './movies.component';
+import { MoviesComponent, MovieFilterType } from './movies.component';
 
-// TODO: when MoviesComponent is ready, modify the child routing according to it
 const moviesRoutes: Routes = [
-  {
-    path: 'movies', component: MoviesComponent
-  }
+	{
+	    path: 'movies',
+	    children: [
+	      {
+		    path: 'all', component: MoviesComponent,
+		    data: {
+		    	filterType: MovieFilterType.All
+		    }
+		  },
+		  {
+		    path: 'watchlist', component: MoviesComponent,
+		    data: {
+		    	filterType: MovieFilterType.Watchlist
+		    }
+		  },
+		  {
+		    path: 'favorites', component: MoviesComponent,
+		    data: {
+		    	filterType: MovieFilterType.Favorites
+		    }
+		  }
+	    ]
+	}  
 ];
 
 @NgModule({
