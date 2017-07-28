@@ -6,15 +6,20 @@
                 <div class="content-top">
                     <div class="releasedate"><i class="material-icons">camera_roll</i> {{ Model.release_date.getFullYear() }}</div>
                     <div class="actions">
-                        <div mdTooltip="Add to favorite" [mdTooltipPosition]="tooltipPosition" (click)="favorite($event)">
+                        <div *ngIf="!addedToFavorites" mdTooltip="Add to favorites"
+                            [mdTooltipPosition]="tooltipPosition" (click)="toggleFavorites($event)">
                             <i class="material-icons">favorite_border</i>
                         </div>
-                        <div *ngIf="!addedToWatchList" mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
-                            [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+                        <div *ngIf="addedToFavorites" mdTooltip="Remove from favorites"
+                            [mdTooltipPosition]="tooltipPosition" (click)="toggleFavorites($event)">
+                            <i class="material-icons">favorite</i>
+                        </div>
+                        <div *ngIf="!addedToWatchList" mdTooltip="Add to watchlist"
+                            [mdTooltipPosition]="tooltipPosition" (click)="toggleWatchlist($event)">
                             <i class="material-icons">playlist_add</i>
                         </div>
-                        <div *ngIf="addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
-                            [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+                        <div *ngIf="addedToWatchList" md-button mdTooltip="Remove from watchlist"
+                            [mdTooltipPosition]="tooltipPosition" (click)="toggleWatchlist($event)">
                             <i class="material-icons">remove</i>
                         </div>
                     </div>

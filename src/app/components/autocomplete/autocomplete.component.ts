@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 import { SearchService, Show, MovieStoreServiceBase, WatchListService } from '../../services';
 
@@ -15,7 +16,7 @@ export class AutoCompleteComponent implements OnInit {
 	searchInput: FormControl;
 	showSearchResults: Observable<any>;
 
-	constructor(private searchService: SearchService, private watchlistService: WatchListService) {
+	constructor(private router: Router, private searchService: SearchService, private watchlistService: WatchListService) {
 		this.searchInput = new FormControl();
 		this.showSearchResults = this.searchInput.valueChanges
 			.debounceTime(500)
@@ -30,11 +31,19 @@ export class AutoCompleteComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	goToDetails(show: Show) {
+		this.router.navigate(['movies/', show.id]);
+	}
+	
 	displayResultInSearchbox(show: Show) {
 		return show && show.title;
 	}
 
 	addToWatchList(show: Show) {
-		this.watchlistService.add(show);
+		this.watchlistService.addToWatchlist(show);
+	}
+
+	addToFavorites(show: Show) {
+		this.watchlistService.addToFavorites(show);
 	}
 }

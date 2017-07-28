@@ -20,11 +20,19 @@
         <span class="movie-runtime">{{Model.runtime}} min</span>
       </div>
       <div class="movie-action-buttons">
-        <button md-raised-button class="add-to-whatchlist" color="primary">
+        <button *ngIf="isWatchlist" md-raised-button class="add-to-whatchlist" color="primary" (click)="toggleWatchlist()">
+          <md-icon>remove</md-icon>
+          Remove from watchlist
+        </button>
+        <button *ngIf="!isWatchlist" md-raised-button class="add-to-whatchlist" color="primary" (click)="toggleWatchlist()">
           <md-icon>playlist_add</md-icon>
           Add to watchlist
         </button>
-        <button  md-raised-button class="add-to-favs" color="accent">
+        <button *ngIf="isFavorite" md-raised-button class="add-to-favs" color="accent"  (click)="toggleFavorite()">
+          <md-icon>favorite</md-icon>
+          Remove from favourites
+        </button>
+        <button *ngIf="!isFavorite" md-raised-button class="add-to-favs" color="accent"  (click)="toggleFavorite()">
           <md-icon>favorite_border</md-icon>
           Add to favourites
         </button>

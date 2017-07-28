@@ -16,15 +16,28 @@ export enum MovieFilterType {
 })
 export class MoviesComponent implements OnInit {
     public filterType: MovieFilterType;
-    public filter;
     public watchList: Observable<MediaModel[]>;
     
     constructor(private movieStoreService: WatchListService, route: ActivatedRoute) {
     	this.filterType = route.snapshot.data.filterType;
     }
 
+    private setMoviesList() {
+        switch (this.filterType) {
+            case MovieFilterType.Favorites:
+                this.watchList = this.movieStoreService.getFavorites();
+                break;
+            case MovieFilterType.Watchlist:
+                this.watchList = this.movieStoreService.getWatchlist();
+                break;
+            case MovieFilterType.All:
+            default:
+                this.watchList = this.movieStoreService.getAll();
+                break;
+        }
+    }
+
     ngOnInit() {
-        this.watchList = this.movieStoreService.getAll();
-        this.filter = this.filterType;
+        this.setMoviesList();
     }
 }

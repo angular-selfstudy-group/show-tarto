@@ -3,9 +3,9 @@
 	<md-icon mdPrefix>search</md-icon>
 </md-input-container>
 
-<md-autocomplete #auto [displayWith]="displayResultInSearchbox">
+<md-autocomplete #auto>
 	<md-option *ngFor="let show of showSearchResults | async" [value]="show" >
-		<div class="show-result">
+		<div class="show-result" (click)="goToDetails(show)">
 			<img class="poster" src="{{show.posterUrl}}"/>
 			<div class="title-buttons-container">
 				<span class="title">{{ show.title }}</span>
@@ -13,7 +13,7 @@
 					<button md-icon-button color="primary" (click)="addToWatchList(show)" title="Add to watchlist">
 						<md-icon>playlist_add</md-icon>
 					</button>
-					<button md-icon-button color="accent" title="Add to favourites">
+					<button md-icon-button color="accent" (click)="addToFavorites(show)" title="Add to favorites">
 						<md-icon>favorite_border</md-icon>
 					</button>
 				</div>
@@ -22,14 +22,3 @@
 		</div>			
 	</md-option>
 </md-autocomplete>
-
-<div *ngIf="searchInput.value && searchInput.value.title">
-	<button md-raised-button color="primary" (click)="addToWatchList(searchInput.value)">
-		<md-icon>playlist_add</md-icon>
-		Add to watchlist
-	</button>
-	<button md-raised-button color="accent">
-		<md-icon>favorite_border</md-icon>
-		Add to favourites
-	</button>
-</div>

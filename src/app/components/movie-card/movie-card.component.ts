@@ -30,9 +30,11 @@ export class MovieCardComponent implements OnInit {
                 this.Model = m;
                 this.Model.overview = this.Model.overview.length > 65 ? this.Model.overview.substr(0, 65) + "..." : this.Model.overview;
                 this.isLoading = false;
-                this.addedToWatchList = this._watchlistService.contains(this.Model);
                 this.tooltipText = this.addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist';
-            })
+            });
+
+            this.addedToFavorites = this._watchlistService.isFavorite(this.Id);
+            this.addedToWatchList = this._watchlistService.isWatchlist(this.Id);
         }
     }
 
@@ -40,19 +42,23 @@ export class MovieCardComponent implements OnInit {
         this.router.navigate(['movies/', this.Model.id]);
     }
 
-    private favorite(event: Event) {
-        event.stopPropagation();
-        console.log(`Movie [${this.Model.id}] added to favorite`);
-    }
-
-    private watchlist(event: Event) {
+    private toggleWatchlist(event: Event) {
         if (this.addedToWatchList) {
             this._watchlistService.remove(this.Model);
         } else {
-            this._watchlistService.add(this.Model);
+            this._watchlistService.addToWatchlist(this.Model);
         }
         this.addedToWatchList = !this.addedToWatchList;
         event.stopPropagation();
-        console.log(`Movie [${this.Model.id}] added to watchlist`);
+    }
+
+    private toggleFavorites() {
+        if (this.addedToFavorites) {
+            this._watchlistService.remove(this.Model);
+        } else {
+            this._watchlistService.addToFavorites(this.Model);
+        }
+        this.addedToFavorites = !this.addedToFavorites;
+        event.stopPropagation();
     }
 }

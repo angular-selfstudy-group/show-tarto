@@ -5,9 +5,9 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class WatchListService implements WatchListServiceBase {
-
     constructor(private _dataService: DataService) { }
-    public add(item: MediaModel) {
+
+    private addMovie(item: MediaModel) {
         item.addedDate = new Date();
         let savedList = this.fetchStorageItems();
         if (savedList) {
@@ -17,6 +17,31 @@ export class WatchListService implements WatchListServiceBase {
         }
         this._dataService.SaveItem(savedList);
     }
+
+    public addToWatchlist(item: MediaModel) {
+        item.isWatchlist = true;
+        this.addMovie(item);
+    }
+
+    public addToFavorites(item: MediaModel) {
+        item.isFavorite = true;
+        this.addMovie(item);
+    }
+
+    public isWatchlist(mediaId: number): boolean {
+        const savedList = this.fetchStorageItems();
+        const mediaItem = savedList[mediaId];
+
+        return mediaItem && mediaItem.isWatchlist;
+    }
+
+    public isFavorite(mediaId: number): boolean {
+        const savedList = this.fetchStorageItems();
+        const mediaItem = savedList[mediaId];
+
+        return mediaItem && mediaItem.isFavorite;
+    }
+
     public remove(item: MediaModel) {
         const savedList = this.fetchStorageItems();
         if (savedList) {
@@ -25,7 +50,7 @@ export class WatchListService implements WatchListServiceBase {
         }
     }
 
-    public getAll(): Observable<MediaModel[]> {
+    private getMoviesBy(filter: (show: MediaModel) => boolean): Observable<MediaModel[]> {
         const savedList = this.fetchStorageItems();
         const watchList = new Observable<MediaModel[]>(observer => {
             if (savedList) {
@@ -33,13 +58,25 @@ export class WatchListService implements WatchListServiceBase {
                 for (const key in savedList) {
                     if (savedList.hasOwnProperty(key)) {
                         const element = savedList[key];
-                        arr.push(element);
+                        if(filter(element))
+                            arr.push(element);
                     }
                 }
                 observer.next(arr);
             }
         });
         return watchList;
+    }
+    public getAll(): Observable<MediaModel[]> {
+        return this.getMoviesBy(movie => true);
+    }
+
+    public getWatchlist(): Observable<MediaModel[]> {
+        return this.getMoviesBy(movie => movie.isWatchlist);
+    }
+
+    public getFavorites(): Observable<MediaModel[]> {
+        return this.getMoviesBy(movie => movie.isFavorite);
     }
 
     public contains(item: MediaModel): boolean {
