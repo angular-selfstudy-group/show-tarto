@@ -1,35 +1,30 @@
 <div class="card-holder">
     <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
-    <md-card class="card" *ngIf="!isLoading" (click)="cardClick()">
-            <div class="content" >
-                <div class="poster" [ngStyle]="{'background-image': 'url('+Model.poster_bg+')'}"></div>
-                <div class="content-top">
-                    <div class="releasedate"><i class="material-icons">camera_roll</i> {{ Model.release_date.getFullYear() }}</div>
-                    <div class="actions">
-                        <div *ngIf="!addedToFavorites" mdTooltip="Add to favorites"
-                            [mdTooltipPosition]="tooltipPosition" (click)="toggleFavorites($event)">
-                            <i class="material-icons">favorite_border</i>
-                        </div>
-                        <div *ngIf="addedToFavorites" mdTooltip="Remove from favorites"
-                            [mdTooltipPosition]="tooltipPosition" (click)="toggleFavorites($event)">
-                            <i class="material-icons">favorite</i>
-                        </div>
-                        <div *ngIf="!addedToWatchList" mdTooltip="Add to watchlist"
-                            [mdTooltipPosition]="tooltipPosition" (click)="toggleWatchlist($event)">
-                            <i class="material-icons">playlist_add</i>
-                        </div>
-                        <div *ngIf="addedToWatchList" md-button mdTooltip="Remove from watchlist"
-                            [mdTooltipPosition]="tooltipPosition" (click)="toggleWatchlist($event)">
-                            <i class="material-icons">remove</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="title-plot">
-                    <h1 class="title">
-                        {{ Model.title }}
-                    </h1>
-                    <p class="plot">{{ Model.overview }}</p>
-                </div>
-            </div>
-    </md-card>
+    <div flex-xs flex-gt-xs="50" layout="column">
+        <md-card *ngIf="!isLoading" (click)="cardClick()" role="group">
+            <img md-card-image src="{{Model.poster_bg}}">
+            <md-card-title>
+                {{ Model.title }}
+                <small>{{ Model.release_date.getFullYear() }}</small>
+            </md-card-title>
+            <md-card-content layout="row" layout-align="start center">
+                <p>
+                    {{ Model.overview }}
+                </p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <button md-icon-button mdTooltip="Add to favorite" [mdTooltipPosition]="tooltipPosition" (click)="favorite($event)">
+                    <md-icon>favorite_border</md-icon>
+                </button>
+                <button md-icon-button *ngIf="!addedToWatchList" mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
+                    [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+                    <md-icon>playlist_add</md-icon>
+                </button>
+                <button md-icon-button *ngIf="addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
+                    [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+                    <md-icon>remove</md-icon>
+                </button>
+            </md-card-actions>
+        </md-card>
+    </div>
 </div>

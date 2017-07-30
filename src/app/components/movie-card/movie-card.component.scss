@@ -10,130 +10,36 @@ $cardMainFontColor: lighten(mat-color($primary), 10%);
 }
 
 .card-holder {
-  position: relative;
-  height: 100%;
-  padding: 0.5em;
+    padding: .5em;
 }
 
-.card {
-    padding: 0;
-    height: 100%;
+md-card {
+    display: flex;
+    flex-direction: column;
     color: #fff;
     cursor: pointer;
     user-select: none;
     font-size: 1em;
 
-    &:hover {
-
-      .poster {
-        filter: brightness(0.3);
-      }
-
-      .content {
-
-        .title-plot {
-          top: 0;
-        }
-      }
-    }
-
-    i.material-icons {
-      font-size: 1.3em;
-    }
-
-    .poster {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transition: filter 150ms ease-in;
-      filter: contrast(1.4) saturate(1.2) brightness(0.6);
-      &:before {
-        position: absolute;
-        content: '';
-        font-size: 1em;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        top: 0;
-        background-image: linear-gradient(transparent -8em, mat-color($accent, 500) 16em);
-      }
-    }
-
-    .content {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      font-size: 1em;
-      padding: 1em;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      z-index: 1;
-      overflow: hidden;
-
-      &-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        font-size: 0.8em;
-        z-index: 1;
-        flex: 0 0 10%;
-      }
-
-      .releasedate{
-        font-size: 1em;
-        color: $cardMainFontColor;
-        font-weight: 500;
-
-        .material-icons {
-          vertical-align: text-bottom;
-          margin-right: 0.1em;
-        }
-      }
-      .actions {
-        display: flex;
-        flex: 0 1 3.4em;
-        justify-content: space-between;
-        
-      }
-
-      .title-plot {
-        position: relative;
-        flex: 3 1 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        top: calc(50% + 0.6em);
-        transition: all 150ms ease-in;
-        overflow: hidden;
-
-        & > * {
-          flex: 1 1 50%;
-        }
-      }
-
-      .title {
-        font-size: 1em;
+    md-card-title {
+        font-size: 16px;
         font-weight: 300;
         color: $cardMainFontColor;
         margin: 0;
-        
+    }
+    
+    md-card-subtitle {
+        font-size: 1em;
+        color: $cardMainFontColor;
+        font-weight: 500;
+    }
+
+    md-card-actions {
         display: flex;
-        align-items: flex-end;
-      }
-      .plot {
-          font-size: 0.7em;
-          margin: 0;
-          padding-top: 1em;
-          display: flex;
-          align-items: flex-end;
-      }
+        justify-content: space-around;
+
+        button {
+            min-width: 0
+        }
     }
 }
