@@ -4,7 +4,6 @@ export { Show, CardModel, MovieDetailModel };
 
 export abstract class SearchService {
 	public abstract Search(term: string): Observable<Show[]>;
-	public abstract GetPopularMovies(): Observable<CardModel[]>;
-	public abstract GetMovieDetails(id: number): Observable<MovieDetailModel>;
-	public abstract GetSerieDetails(id: number): Observable<MovieDetailModel>;
+	public abstract GetPopularMovies(): Observable<CardModel[]>
+	public abstract GetMovieDetails(id: number): Observable<MovieDetailModel>
 }
