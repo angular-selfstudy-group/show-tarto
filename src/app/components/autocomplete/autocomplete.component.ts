@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 
-import { SearchService, Show, MovieStoreServiceBase, WatchListService } from '../../services';
+import { SearchService, Show, WatchListService } from '../../services';
 
 import 'rxjs/Rx';
 

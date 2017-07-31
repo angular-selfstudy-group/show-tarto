@@ -12,13 +12,9 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Roboto,"Helvetica Neue",sans-serif;
+
     button[class*="mat-"][class*="-fab"],
     button[class*="mat-"][class*="-button"] {
-    // & .mat-button,
-    // & .mat-fab,
-    // & .mat-icon-button,
-    // & .mat-mini-fab,
-    // & .mat-raised-button {
         font-size: 1rem;
         min-width: 5.5em;
         line-height: 2.25em;
@@ -26,6 +22,7 @@ body {
         border-radius: 0.125em;
         font-weight: 400;
     }
+
     & .mat-icon {
         font-size: 1.3rem;
         height: 1em;
@@ -35,12 +32,12 @@ body {
 
 .container {
     display: block;
-    width: calc(100% - 10rem);
-    max-width: 60rem;
     margin: 0 auto;
+    min-width: 320px;
+    max-width: 1280px;
 }
 
-.center-list{
+.center-list {
     position: relative;
     display: flex;
     justify-content: center;
