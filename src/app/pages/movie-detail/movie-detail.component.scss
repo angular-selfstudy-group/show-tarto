@@ -12,8 +12,8 @@
     &-header {
         width: 100%;
         font-size: 1em;
-        height: 15em;
-        margin-bottom: 6em;
+        height: auto;
+        min-height: 15em;
         position: relative;
         display: flex;
         align-items: stretch;
@@ -44,16 +44,48 @@
         position: relative;
         display: flex;
         align-items: flex-end;
+        flex-direction: column;
+        padding: 0;
         color: white;
         font-size: 1em;
     }
+    &-action-buttons {
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1em;
+
+        button {
+            font-size: 1em;
+            margin-right: 1em;
+            flex-basis: 50%;
+            color: black;
+            &:last-of-type {
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+            &.add-to-whatchlist {
+                background-color: mat-color($primary, 100);
+                &.added {
+                    background-color: mat-color($primary);
+                }
+            }
+            &.add-to-favs {
+                background-color: mat-color($accent, 100);
+                &.favorited {
+                    background-color: mat-color($accent);
+                }
+            }
+        }
+    }
     &-poster-picture {
         --box-shadow-color: rgba(0,0,0,.6);
-
+        display: none;
         position: relative;
         font-size: 1em;
-        height: 13em;
-        flex: 0 0 9em;
+        height: 11em;
+        flex: 0 0 7em;
         align-self: flex-end;
         transform: translateY(33%);
         transition: all .3s ease-in-out;
@@ -73,20 +105,39 @@
         display: flex;
         flex-direction: column;
         height: 100%;
-        justify-content: space-around;
-        padding: 4.2em 0 0.7em 2em;
+        justify-content: space-between;
+        padding: 1em;
         font-weight: 100;
+    }
+    &-info {
+        &-piece {
+            display: flex;
+            font-size: 1em;
+            flex-direction: column;
+            margin-bottom: 0.4em;
+        }
+        &-label {
+            color: mat-color($primary);
+            font-size: 0.6em;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
     }
     &-title {
-        font-weight: 100;
-        font-size: 2em;
+        font-weight: 400;
+        font-size: 1.5em;
         margin: 0;
-        line-height: 1;
+        line-height: 1.3;
     }
-    &-release-date {
-        font-size: 0.9em;
-        font-weight: 500;
-        margin-left: 1em;
+    &-info-line {
+        font-size: 1.1em;
+        font-weight: 200;
+        display: flex;
+        flex-wrap: wrap;
+
+        span {
+            margin-right: 0.5em;
+        }
     }
     &-genre {
         &-text {
@@ -96,6 +147,7 @@
             font-size: 0.9em;
             border: 0.01em solid mat-color($primary);
             margin-right: 0.5em;
+            margin-bottom: 0.5em;
             border-radius: 5em;
             text-transform: capitalize;
         }
@@ -106,15 +158,7 @@
             padding-right: 0.1em;
         }
     }
-    &-action-buttons {
-        position: absolute;
-        bottom: 0;
-        left: 11em;
-        transform: translateY(150%);
-        font-size: 1em;
-
-        button {
-            font-size: 1em;
-        }
+    &-main {
+        padding: 1em;
     }
 }

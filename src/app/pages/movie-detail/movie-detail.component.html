@@ -9,41 +9,50 @@
       <div class="movie-primary-texts">
         <h1 class="movie-title">
           {{Model.title}}
-          <span class="movie-release-date">{{Model.release_date.getFullYear()}}</span>
         </h1>
+        <div class="movie-info-line">
+          <span class="movie-release-date movie-info-piece">
+            <span class="movie-info-label">year</span>
+            {{Model.release_date.getFullYear()}}
+          </span>
+          <span class="movie-runtime movie-info-piece">
+            <span class="movie-info-label">runtime</span>
+            {{Model.runtime}} min
+          </span>
+          <span class="movie-language movie-info-piece">
+            <span class="movie-info-label">language</span>
+            {{Model.original_language}}
+          </span>
+          <span class="movie-rating movie-info-piece">
+            <span class="movie-info-label">rating</span>
+            {{Model.vote_average}}
+          </span>
+          <span class="movie-revenue movie-info-piece">
+            <span class="movie-info-label">revenue</span>
+            {{Model.revenue}}
+          </span>
+        </div>
         <div class="movie-secondary-headline">
           <span class="movie-genre-text" *ngFor="let genre of Model.genres">
             <i class="movie-genre-icon cinema-{{genre.name.toLowerCase()}}"></i>
             {{genre.name}}
           </span>
         </div>
-        <span class="movie-runtime">{{Model.runtime}} min</span>
-      </div>
-      <div class="movie-action-buttons">
-        <button *ngIf="isWatchlist" md-raised-button class="add-to-whatchlist" color="primary" (click)="toggleWatchlist()">
-          <md-icon>remove</md-icon>
-          Remove from watchlist
-        </button>
-        <button *ngIf="!isWatchlist" md-raised-button class="add-to-whatchlist" color="primary" (click)="toggleWatchlist()">
-          <md-icon>playlist_add</md-icon>
-          Add to watchlist
-        </button>
-        <button *ngIf="isFavorite" md-raised-button class="add-to-favs" color="accent"  (click)="toggleFavorite()">
-          <md-icon>favorite</md-icon>
-          Remove from favourites
-        </button>
-        <button *ngIf="!isFavorite" md-raised-button class="add-to-favs" color="accent"  (click)="toggleFavorite()">
-          <md-icon>favorite_border</md-icon>
-          Add to favourites
-        </button>
       </div>
     </div>
   </header>
   <main class="movie-main container">
+    <div class="movie-action-buttons">
+      <button md-raised-button [ngClass]="{'added': isWatchlist}" class="add-to-whatchlist" (click)="toggleWatchlist()">
+        <md-icon>{{isWatchlist ? 'remove' : 'playlist_add'}}</md-icon>
+        Watchlist
+      </button>
+      <button md-raised-button [ngClass]="{'favorited': isFavorite}" class="add-to-favs" (click)="toggleFavorite()">
+        <md-icon>{{isFavorite ? 'favorite' : 'favorite_border'}}</md-icon>
+        Favourites
+      </button>
+    </div>
     <p class="movie-overview">{{Model.overview}}</p>
-    <h4>{{Model.revenue}}</h4>
-    <h4>{{Model.original_language}}</h4>
-    <h4>{{Model.vote_average}}</h4>
   </main>
   
 
