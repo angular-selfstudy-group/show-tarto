@@ -10,10 +10,10 @@
 			<div class="title-buttons-container">
 				<span class="title">{{ show.title }}</span>
 				<div class="buttons">
-					<button md-icon-button color="primary" (click)="addToWatchList(show)" title="Add to watchlist">
+					<button md-icon-button color="primary" (click)="addToWatchList(show, $event)" title="Add to watchlist">
 						<md-icon>playlist_add</md-icon>
 					</button>
-					<button md-icon-button color="accent" (click)="addToFavorites(show)" title="Add to favorites">
+					<button md-icon-button color="accent" (click)="addToFavorites(show, $event)" title="Add to favorites">
 						<md-icon>favorite_border</md-icon>
 					</button>
 				</div>

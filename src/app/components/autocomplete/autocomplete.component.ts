@@ -39,11 +39,13 @@ export class AutoCompleteComponent implements OnInit {
 		return show && show.title;
 	}
 
-	addToWatchList(show: Show) {
+	addToWatchList(show: Show, event) {
 		this.watchlistService.addToWatchlist(show);
+		event.stopPropagation();
 	}
 
-	addToFavorites(show: Show) {
+	addToFavorites(show: Show, event) {
 		this.watchlistService.addToFavorites(show);
+		event.stopPropagation();
 	}
 }
