@@ -15,11 +15,11 @@ describe('show-tarto App', () => {
       .then(done, done.fail);
   });
 
-  it('Get Popular items equal 5', done => {
+  it('Get Popular items equal 10', done => {
     page.navigateTo();
 
     page.getPopular()
-      .then(list => expect(list).toBe(5))
+      .then(list => expect(list).toBe(10))
       .then(done, done.fail);
   });
 });

@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "6.11.2"
+before_install:
+  - npm install -g @angular/cli webpack
+  - npm install
+before_script:
+  - ng test
+  - ng e2e
+script:
+  - ng build -prod
