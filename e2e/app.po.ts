@@ -12,4 +12,8 @@ export class ShowTartoPage {
   getPopular() {
     return element.all(by.css('st-moviecard')).count();
   }
+
+  getSideNav() {
+    return element(by.model('md-sidenav-container'));
+  }
 }

@@ -22,4 +22,9 @@ describe('show-tarto App', () => {
       .then(list => expect(list).toBe(10))
       .then(done, done.fail);
   });
+
+  it('Sidebar - Closed when we loaded Startpage', done => {
+    page.getSideNav().isDisplayed()
+      
+  })
 });
