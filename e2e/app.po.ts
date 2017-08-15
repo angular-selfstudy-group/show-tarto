@@ -13,7 +13,12 @@ export class ShowTartoPage {
     return element.all(by.css('st-moviecard')).count();
   }
 
-  getSideNav() {
-    return element(by.model('md-sidenav-container'));
+  sideNavClosed() {
+    return element(by.css('.mat-sidenav-closed')).isPresent();
+  }
+
+
+  sideNavOpened() {
+    return element(by.css('mat-sidenav-opened')).isDisplayed();
   }
 }

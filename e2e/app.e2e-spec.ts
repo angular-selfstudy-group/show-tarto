@@ -23,8 +23,11 @@ describe('show-tarto App', () => {
       .then(done, done.fail);
   });
 
-  it('Sidebar - Closed when we loaded Startpage', done => {
-    page.getSideNav().isDisplayed()
-      
+  it('SideNav - Closed when we loaded Startpage', done => {
+    page.navigateTo(); 
+
+    page.sideNavClosed()
+      .then(element => expect(element).toBeTruthy())
+      .then(done, done.fail);
   })
 });
