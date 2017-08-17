@@ -29,6 +29,11 @@ import { MaterialComponentsModule } from "app/material.components.module";
     ComponentsModule,
     PagesModule
   ],
+  exports: [
+    MaterialComponentsModule,
+    AppRoutingModule,
+    ServicesModule
+  ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })

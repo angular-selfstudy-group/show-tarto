@@ -1,10 +1,10 @@
 ## Startpage test cases:
   - [x] md-sidenav - hide
   - [x] nav count = 10
-  - [ ] md-toolbar - show
-  - [ ] md-input-container - show
-  - [ ] input placeholder toEqual=Search show
-  - [ ] input type = Search
+  - [x] md-toolbar - show
+  - [x] md-input-container - show
+  - [x] input placeholder toEqual=Search show
+  - [X] input type = Search
   - [ ] nav.first h3.geText = Home
   - [ ] nav h3 movies
   - [ ] nav h3 series

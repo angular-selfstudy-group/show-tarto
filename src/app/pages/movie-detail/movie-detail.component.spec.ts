@@ -1,25 +1,32 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MovieDetailComponent } from './movie-detail.component';
 
-// import { MovieDetailComponent } from './movie-detail.component';
+import { ActivatedRoute } from '@angular/router';
+import { MaterialModule } from '@angular/material';
 
-// describe('MovieDetailComponent', () => {
-//   let component: MovieDetailComponent;
-//   let fixture: ComponentFixture<MovieDetailComponent>;
+describe('MovieDetailComponent', () => {
+  let component: MovieDetailComponent;
+  let fixture: ComponentFixture<MovieDetailComponent>;
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ MovieDetailComponent ]
-//     })
-//     .compileComponents();
-//   }));
+  beforeEach(() => {
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(MovieDetailComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+    TestBed.configureTestingModule({
+        imports: [
+            MaterialModule
+        ],
 
-//   it('should be created', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+        declarations: [ ActivatedRoute, MovieDetailComponent ]
+    })
+
+    fixture = TestBed.createComponent(MovieDetailComponent);
+    component = fixture.componentInstance;
+
+    fixture.detectChanges();
+
+  });
+
+
+  it('should be created', () => {
+    expect(component).toBeTruthy();
+  });
+});
