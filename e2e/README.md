@@ -5,7 +5,7 @@
   - [x] md-input-container - show
   - [x] input placeholder toEqual=Search show
   - [X] input type = Search
-  - [ ] nav.first h3.geText = Home
-  - [ ] nav h3 movies
-  - [ ] nav h3 series
-  - [ ] nav.last h3 getText = About   
+  - [x] nav.first h3.geText = Home
+  - [x] nav h3 movies
+  - [x] nav h3 series
+  - [x] nav.last h3 getText = About   

@@ -1,6 +1,11 @@
 import { browser, by, element } from 'protractor';
 
+let searchInput = element(by.css('.mat-input-element'));
+let sideNav = element(by.css('md-sidenav'));
+let menuButton = element(by.css('.mat-toolbar-row > .mat-icon-button'));
+
 export class ShowTartoPage {
+
   navigateTo() {
     return browser.get('/');
   }
@@ -14,28 +19,26 @@ export class ShowTartoPage {
   }
 
   getToolbar() {
-    return element(by.css('md-toolbar-row')).isPresent();
+    return element(by.css('md-toolbar-row')).isDisplayed();
   }
 
   getSearchInput() {
-    return element(by.css('.mat-input-element')).isPresent();
+    return searchInput.isDisplayed();
   }
 
   getSearchPlaceholder() {
-    //Search show
-    return element(by.css('.mat-input-element')).getAttribute('placeholder');
+    return searchInput.getAttribute('placeholder');
   }
 
   getSearchType() {
-    //Search show
-    return element(by.css('.mat-input-element')).getAttribute('type');
+    return searchInput.getAttribute('type');
   }
 
-  sideNavClosed() {
-    return element(by.css('.mat-sidenav-closed')).isPresent();
+  sideNav() {
+    return sideNav.isDisplayed();
   }
 
-  sideNavOpened() {
-    return element(by.css('mat-sidenav-opened')).isDisplayed();
+  openSideNav() {
+    return menuButton.click()
   }
 }
