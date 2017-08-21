@@ -10,8 +10,8 @@ import { SearchService, WatchListService } from './../../services';
 })
 export class MovieDetailComponent implements OnInit {
 
-  private Model: MovieDetailModel;
-  private id: number;
+  public Model: MovieDetailModel;
+  public id: number;
   public isLoading: boolean;
   public isFavorite: boolean;
   public isWatchlist: boolean;

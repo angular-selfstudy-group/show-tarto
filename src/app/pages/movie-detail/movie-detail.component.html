@@ -12,24 +12,19 @@
         </h1>
         <div class="movie-info-line">
           <span class="movie-release-date movie-info-piece">
-            <span class="movie-info-label">year</span>
-            {{Model.release_date.getFullYear()}}
+            <span class="movie-info-label">year</span> {{Model.release_date.getFullYear()}}
           </span>
           <span class="movie-runtime movie-info-piece">
-            <span class="movie-info-label">runtime</span>
-            {{Model.runtime}} min
+            <span class="movie-info-label">runtime</span> {{Model.runtime}} min
           </span>
           <span class="movie-language movie-info-piece">
-            <span class="movie-info-label">language</span>
-            {{Model.original_language}}
+            <span class="movie-info-label">language</span> {{Model.original_language}}
           </span>
           <span class="movie-rating movie-info-piece">
-            <span class="movie-info-label">rating</span>
-            {{Model.vote_average}}
+            <span class="movie-info-label">rating</span> {{Model.vote_average}}
           </span>
           <span class="movie-revenue movie-info-piece">
-            <span class="movie-info-label">revenue</span>
-            {{Model.revenue}}
+            <span class="movie-info-label">revenue</span> {{Model.revenue}}
           </span>
         </div>
         <div class="movie-secondary-headline">
@@ -54,6 +49,6 @@
     </div>
     <p class="movie-overview">{{Model.overview}}</p>
   </main>
-  
+
 
 </section>
