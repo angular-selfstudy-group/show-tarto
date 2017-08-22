@@ -1,4 +1,4 @@
-/* import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 
 import { MovieStoreService } from './movie-store.service';
 
@@ -13,4 +13,3 @@ describe('MovieStoreService', () => {
     expect(service).toBeTruthy();
   }));
 });
- */
