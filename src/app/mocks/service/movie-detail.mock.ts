@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Rx';
 import { MovieDetailModel, GenreModel } from 'app/models';
-import { MovieDetailComponent } from './movie-detail.component';
+import { MovieDetailComponent } from '../../pages/movie-detail/movie-detail.component';
 
 const mockData: MovieDetailModel = {
     id: 328,

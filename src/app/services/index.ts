@@ -5,5 +5,3 @@ export { MovieStoreServiceBase, Movie } from './movie-store.service.base';
 export { WatchListService } from './watchlist.service';
 
 export { ServicesModule } from './services.module';
-
-export * from './AbstractMockObservableService';
