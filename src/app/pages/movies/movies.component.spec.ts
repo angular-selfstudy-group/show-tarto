@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { Observable } from 'rxjs/Rx';
-import { MockSearchService } from 'app/mocks/service/movie-detail.mock';
+import { MockSearchService } from 'app/shared/mocks/service/movie-detail.mock';
 import { WatchListService, SearchService } from 'app/services/index';
 import { MovieDetailModel, GenreModel } from 'app/models';
 import { MoviesComponent } from './movies.component';

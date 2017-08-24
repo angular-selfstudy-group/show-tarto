@@ -4,7 +4,7 @@ import { MaterialModule } from '@angular/material';
 
 import { Observable } from 'rxjs/Rx';
 
-import { MockSearchService } from 'app/mocks/service/movie-detail.mock';
+import { MockSearchService } from 'app/shared/mocks/service/movie-detail.mock';
 
 import { WatchListService, SearchService } from 'app/services/index';
 import { MovieDetailModel, GenreModel } from 'app/models';

@@ -7,70 +7,85 @@ md-input-container {
 	}
 }
 
+$option-height: 4.688em;
+$option-padding: .313em;
+
+
 md-option {
-
-	$option-height: 4.688em;
-	$option-padding: .313em;
-
-	height: $option-height;
+	height: 100%;
 
 	.show-result {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-areas: "poster  title  buttons";
+
 		padding: $option-padding 0;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		width: 100%;
+		height: $option-height - 2 * $option-padding;
+
+		grid-column-start: 1;
+		
+		grid-template-columns:50px auto 85px;
 
 		.poster {
+			grid-area: poster;
+			margin: 0 .625em 0 0;
+			
 			object-fit: cover;
 			width: $option-height * 2 / 3;
 			height: $option-height - 2 * $option-padding;
-			float: left;
-			margin: 0 .625em 0 0;
 		}
-
-		.title-buttons-container {
+		
+		.title {
+			grid-area: title;
 			padding: 0;
-			line-height: 1em;
-			float: left;
-			width: 100%;
-
-			.title {
-				max-width: 80%;
-				text-overflow: ellipsis;
-				display: inline-block;
-				overflow: hidden;
-			}
+			margin: 0;
+			align-self: center;
 		}
-
+		
 		.buttons {
-			position: absolute;
-		    bottom: -0.25em;
-			left: 4.5em;
-			opacity: 0;
-			visibility: hidden;
-			transition: opacity .25s linear, 
-			visibility .1s linear .5s;
-
+			float: right;
+			grid-area: buttons;
+			align-self: center;
+			
 			button {
 				margin: 0;
 				padding: 0;
 				min-width: 0;
 			}
 		}
-
+	
 		.year {
 			font-weight: 400;
 			font-size: .75em;
+			grid-area: year
 		}
 	}
+}
 
-	&:hover {
+@media (max-width: 600px) {
+	md-option {
+		height: 100%;
 		.show-result {
-			.buttons {
-				float: right;
-				opacity: 1;
-				visibility: visible;
+			height: 8.124em;
+			grid-template-areas: 
+				"poster buttons"
+				"title title";
+			justify-content: space-between;
+			grid-template-rows: 50% 50%;
+			grid-template-columns: 75%;
+
+
+			.title {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				max-width: 100%;
+				margin-right: 20px;
 			}
+		}
+
+		&:nth-child(odd) {
+			background: #000;
 		}
 	}
 }
