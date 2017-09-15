@@ -3,6 +3,6 @@ export interface Movie {
 }
 
 export abstract class MovieStoreServiceBase {
-	public abstract getWatchlist() : Movie[];
+	public abstract getWatchlist(): Movie[];
 	public abstract addToWatchList(movie: Movie);
 }

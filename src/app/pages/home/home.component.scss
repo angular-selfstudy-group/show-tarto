@@ -1,16 +1,17 @@
 @mixin card-width($columnNum) {
     $keyNum: 100 / $columnNum;
     $margin: (100 - $keyNum) / 100;
+
     flex: 0 0 calc(#{$keyNum}% - #{$margin}em);
 }
+
 .app-search {
     display: block;
-    margin: 1em auto 0 auto;
+    margin: 1em auto 0;
 }
-.popular-list {    
 
-    .spinner{
+.popular-list {
+    .spinner {
         margin: 0 auto;
     }
-
 }

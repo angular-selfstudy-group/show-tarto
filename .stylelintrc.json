@@ -1,0 +1,100 @@
+{
+    "extends": "stylelint-config-standard",
+    "plugins": [
+        "stylelint-order"
+    ],
+    "rules": {
+        "indentation": 4,
+        "block-no-empty": true,
+        "property-case": "lower",
+        "unit-case": "lower",
+        "no-duplicate-selectors": true,
+        "no-empty-source": true,
+        "comment-no-empty": true,
+        "number-leading-zero": "never",
+        "selector-type-no-unknown": [
+            true,
+            {
+                "ignore": [
+                    "custom-elements"
+                ]
+            }
+        ],
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "mixin",
+                    "include"
+                ]
+            }
+        ],
+        "selector-pseudo-element-colon-notation": "single",
+        "declaration-block-no-redundant-longhand-properties": [
+            true,
+            {
+                "ignoreShorthands": [
+                    "grid-template"
+                ]
+            }
+        ],
+        "order/properties-order": [
+            "content",
+            "position",
+            "top",
+            "right",
+            "bottom",
+            "left",
+            "float",
+            "clear",
+            "display",
+            "align-items",
+            "margin",
+            "margin-top",
+            "margin-right",
+            "margin-bottom",
+            "margin-left",
+            "border-radius",
+            "border",
+            "border-top",
+            "border-right",
+            "border-bottom",
+            "border-left",
+            "border-color",
+            "border-top-color",
+            "border-right-color",
+            "border-bottom-color",
+            "border-left-color",
+            "border-top-left-radius",
+            "border-top-right-radius",
+            "border-bottom-left-radius",
+            "border-bottom-right-radius",
+            "border-width",
+            "padding",
+            "padding-top",
+            "padding-right",
+            "padding-bottom",
+            "padding-left",
+            "width",
+            "min-width",
+            "height",
+            "min-height",
+            "transform",
+            "color",
+            "background*",
+            "box-shadow",
+            "font-size",
+            "font-weight",
+            "font-family",
+            "line-height",
+            "text-align",
+            "text-transform",
+            "text-decoration",
+            "cursor",
+            "overflow",
+            "z-index",
+            "opacity",
+            "transition"
+        ]
+    }
+}

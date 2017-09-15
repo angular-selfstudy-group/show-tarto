@@ -5,4 +5,5 @@ install:
   - npm install -g @angular/cli webpack
   - npm install
 script:
-  - ng e2e
+  - npm run lint:scss
+  - npm run lint:ts

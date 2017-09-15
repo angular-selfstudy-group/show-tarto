@@ -11,7 +11,7 @@ export class MovieStoreService extends MovieStoreServiceBase {
 		this.watchList = [];
 	}
 
-	getWatchlist () : Movie[] {
+	getWatchlist (): Movie[] {
 		return this.watchList.slice();
 	}
 

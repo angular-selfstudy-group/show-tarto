@@ -34,7 +34,7 @@ export class AutoCompleteComponent implements OnInit {
 	goToDetails(show: Show) {
 		this.router.navigate(['movies/', show.id]);
 	}
-	
+
 	displayResultInSearchbox(show: Show) {
 		return show && show.title;
 	}

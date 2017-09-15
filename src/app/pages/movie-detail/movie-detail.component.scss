@@ -5,159 +5,180 @@
     &-page {
         position: relative;
         font-size: 1em;
+
         @media screen and (max-width: 1099px) {
-            font-size: 0.9rem;
+            font-size: .9rem;
         }
     }
+
     &-header {
-        width: 100%;
-        font-size: 1em;
-        height: auto;
-        min-height: 15em;
         position: relative;
         display: flex;
         align-items: stretch;
+        width: 100%;
+        height: auto;
+        min-height: 15em;
+        font-size: 1em;
     }
+
     &-cover-picture {
         position: absolute;
         width: 100%;
         height: 100%;
+        transition: all .3s ease-in-out;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        transition: all .3s ease-in-out;
-        filter: brightness(0.6);
+        filter: brightness(.6);
+
         &:before {
-            position: absolute;
             content: '';
-            font-size: 1em;
-            bottom: 0;
+            position: absolute;
             top: 0;
             right: 0;
+            bottom: 0;
             left: 0;
-            background-image: 
-            linear-gradient( transparent -5em, 
-            mat-color($accent, 500) 16em)
+            font-size: 1em;
+            background-image: linear-gradient(transparent -5em, mat-color($accent, 500) 16em);
         }
     }
+
     &-header-content {
         position: relative;
         display: flex;
         align-items: flex-end;
-        flex-direction: column;
         padding: 0;
-        color: white;
+        color: #fff;
         font-size: 1em;
+        flex-direction: column;
     }
+
     &-action-buttons {
-        width: 100%;
         bottom: 0;
         display: flex;
-        justify-content: space-between;
+        width: 100%;
         font-size: 1em;
+        justify-content: space-between;
 
         button {
-            font-size: 1em;
             margin-right: 1em;
-            flex-basis: 50%;
             color: black;
+            font-size: 1em;
+            flex-basis: 50%;
+
             &:last-of-type {
                 margin-right: 0;
                 margin-bottom: 0;
             }
+
             &.add-to-whatchlist {
                 background-color: mat-color($primary, 100);
+
                 &.added {
                     background-color: mat-color($primary);
                 }
             }
+
             &.add-to-favs {
                 background-color: mat-color($accent, 100);
+
                 &.favorited {
                     background-color: mat-color($accent);
                 }
             }
         }
     }
+
     &-poster-picture {
-        --box-shadow-color: rgba(0,0,0,.6);
-        display: none;
+        --box-shadow-color: rgba(0, 0, 0, .6);
+
         position: relative;
-        font-size: 1em;
+        display: none;
+        border-radius: .6em;
         height: 11em;
+        transform: translateY(33%);
+        box-shadow: .3em .3em 1.6em -.1em var(--box-shadow-color);
+        font-size: 1em;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
         flex: 0 0 7em;
         align-self: flex-end;
-        transform: translateY(33%);
-        transition: all .3s ease-in-out;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        border-radius: 0.6em;
-        box-shadow: 0.3em 0.3em 1.6em -0.1em var(--box-shadow-color);
-        cursor: pointer;
+
         &:hover {
             transform: translateY(33%) scale(1.07);
-            --box-shadow-color: rgba(0,0,0,.9);
+
+            --box-shadow-color: rgba(0, 0, 0, .9);
         }
     }
+
     &-primary-texts {
-        flex-grow: 1;
         display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: space-between;
         padding: 1em;
+        height: 100%;
         font-weight: 100;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: space-between;
     }
+
     &-info {
         &-piece {
             display: flex;
+            margin-bottom: .4em;
             font-size: 1em;
             flex-direction: column;
-            margin-bottom: 0.4em;
         }
+
         &-label {
             color: mat-color($primary);
-            font-size: 0.6em;
-            text-transform: uppercase;
+            font-size: .6em;
             font-weight: 400;
+            text-transform: uppercase;
         }
     }
+
     &-title {
-        font-weight: 400;
-        font-size: 1.5em;
         margin: 0;
+        font-size: 1.5em;
+        font-weight: 400;
         line-height: 1.3;
     }
+
     &-info-line {
+        display: flex;
         font-size: 1.1em;
         font-weight: 200;
-        display: flex;
         flex-wrap: wrap;
 
         span {
-            margin-right: 0.5em;
+            margin-right: .5em;
         }
     }
+
     &-genre {
         &-text {
             display: inline-block;
-            line-height: 2;
-            padding: 0 0.8em;
-            font-size: 0.9em;
-            border: 0.01em solid mat-color($primary);
-            margin-right: 0.5em;
-            margin-bottom: 0.5em;
+            margin-right: .5em;
+            margin-bottom: .5em;
             border-radius: 5em;
+            border: .01em solid mat-color($primary);
+            padding: 0 .8em;
+            font-size: .9em;
+            line-height: 2;
             text-transform: capitalize;
         }
+
         &-icon {
+            padding-right: .1em;
             color: mat-color($primary);
             font-size: 1.2em;
             vertical-align: text-bottom;
-            padding-right: 0.1em;
         }
     }
+
     &-main {
         padding: 1em;
     }

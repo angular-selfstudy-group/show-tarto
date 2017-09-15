@@ -76,14 +76,14 @@ export class SearchService extends SearchServiceBase {
                     poster_bg: this.getDefaultPosterIfEmpty(json.backdrop_path, '1920'),
                     genres: json.genres.map((genre) => ({
                         id: genre.id,
-                        name: genre.name.toLowerCase().replace(" ", "-")
+                        name: genre.name.toLowerCase().replace(' ', '-')
                     })),
                     overview: json.overview,
                     original_language: json.original_language.toUpperCase(),
                     popularity: json.popularity,
                     release_date: new Date(json.release_date),
                     runtime: json.runtime,
-					revenue: this.convertRevenue(json.revenue),
+                    revenue: this.convertRevenue(json.revenue),
                     vote_average: json.vote_average
                 } as MovieDetailModel;
             });
@@ -106,9 +106,9 @@ export class SearchService extends SearchServiceBase {
     }
 
     private convertRevenue(x: number) {
-        const convertedRevenue = x 
-            ? `${x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} $`
-            : "Unknown"
+        const convertedRevenue = x
+            ? `${x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} $`
+            : 'Unknown'
         return convertedRevenue;
     }
     private getDefaultPosterIfEmpty(uri: string, size: string) {
