@@ -5,5 +5,5 @@ install:
   - npm install
 script:
   - npm run lint
- notifications:
+notifications:
     slack: epmbetsupergroup:zHdM0sziVroLLnUdzqS5hoQu
