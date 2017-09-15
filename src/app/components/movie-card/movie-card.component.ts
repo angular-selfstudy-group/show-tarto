@@ -13,10 +13,10 @@ export class MovieCardComponent implements OnInit {
     @Input() Id: number;
     public Model: MovieDetailModel;
     public isLoading: boolean;
-    private tooltipPosition: string;
-    private tooltipText: string;
-    private addedToWatchList: boolean;
-    private addedToFavorites: boolean;
+    public tooltipPosition: string;
+    public tooltipText: string;
+    public addedToWatchList: boolean;
+    public addedToFavorites: boolean;
 
     constructor(private router: Router, private _watchlistService: WatchListService, private _searchService: SearchService) {
         this.isLoading = true;

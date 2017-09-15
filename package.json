@@ -8,12 +8,13 @@
         "build": "ng build",
         "test": "karma start karma.conf.js",
         "lint:scss": "stylelint ./src/**/*.scss --color --syntax scss --formatter verbose --fix",
-        "lint:ts": "tslint ./src/**/*.ts --format stylish",
+        "lint:ts": "tslint ./src/**/*.ts --project tsconfig.json --type-check --format stylish ",
         "e2e": "protractor protractor.conf.js",
-        "webdriver-update": "webdriver-manager update"
+        "webdriver-update": "webdriver-manager update",
+        "lint": "npm run lint:scss && npm run lint:ts"
     },
     "pre-commit": [
-        "lint:scss"
+        "lint"
     ],
     "private": true,
     "dependencies": {
