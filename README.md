@@ -1,6 +1,6 @@
 # show-tarto
 
-[![Build Status](https://travis-ci.org/angular-selfstudy-group/show-tarto.svg?branch=master)](https://travis-ci.org/angular-selfstudy-group/show-tarto)
+[![Build Status](https://travis-ci.org/angular-selfstudy-group/show-tarto.svg?branch=dev)](https://travis-ci.org/angular-selfstudy-group/show-tarto)
 
 This project was generated with [Angular CLI]
 
