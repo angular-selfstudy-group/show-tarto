@@ -58,8 +58,9 @@ export class WatchListService implements WatchListServiceBase {
                 for (const key in savedList) {
                     if (savedList.hasOwnProperty(key)) {
                         const element = savedList[key];
-                        if(filter(element))
+                        if (filter(element)) {
                             arr.push(element);
+                        }
                     }
                 }
                 observer.next(arr);

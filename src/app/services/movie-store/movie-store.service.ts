@@ -3,19 +3,19 @@ import { MovieStoreServiceBase, Movie } from '../';
 
 @Injectable()
 export class MovieStoreService extends MovieStoreServiceBase {
-	watchList: Movie[];
+    watchList: Movie[];
 
-	constructor() {
-		super();
+    constructor() {
+        super();
 
-		this.watchList = [];
-	}
+        this.watchList = [];
+    }
 
-	getWatchlist () : Movie[] {
-		return this.watchList.slice();
-	}
+    getWatchlist (): Movie[] {
+        return this.watchList.slice();
+    }
 
-	addToWatchList(movie: Movie) {
-		this.watchList.push(movie);
-	}
+    addToWatchList(movie: Movie) {
+        this.watchList.push(movie);
+    }
 }

@@ -13,10 +13,10 @@ export class MovieCardComponent implements OnInit {
     @Input() Id: number;
     public Model: MovieDetailModel;
     public isLoading: boolean;
-    private tooltipPosition: string;
-    private tooltipText: string;
-    private addedToWatchList: boolean;
-    private addedToFavorites: boolean;
+    public tooltipPosition: string;
+    public tooltipText: string;
+    public addedToWatchList: boolean;
+    public addedToFavorites: boolean;
 
     constructor(private router: Router, private _watchlistService: WatchListService, private _searchService: SearchService) {
         this.isLoading = true;
@@ -28,7 +28,7 @@ export class MovieCardComponent implements OnInit {
         if (this.Id) {
             this._searchService.GetMovieDetails(this.Id).subscribe(m => {
                 this.Model = m;
-                this.Model.overview = this.Model.overview.length > 65 ? this.Model.overview.substr(0, 65) + "..." : this.Model.overview;
+                this.Model.overview = this.Model.overview.length > 65 ? this.Model.overview.substr(0, 65) + '...' : this.Model.overview;
                 this.isLoading = false;
                 this.tooltipText = this.addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist';
             });

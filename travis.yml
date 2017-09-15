@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-  - "6.11.2"
-install:
-  - npm install -g @angular/cli webpack
-  - npm install
-  script:
-  - ng e2e

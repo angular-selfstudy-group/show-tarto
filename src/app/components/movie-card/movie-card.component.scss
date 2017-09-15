@@ -4,9 +4,9 @@
 $cardMainFontColor: lighten(mat-color($primary), 10%);
 
 :host {
-    flex: 0 0 10.96em;
     height: 15em;
     font-size: 1em;
+    flex: 0 0 10.96em;
 }
 
 .card-holder {
@@ -15,22 +15,22 @@ $cardMainFontColor: lighten(mat-color($primary), 10%);
 
 md-card {
     display: flex;
-    flex-direction: column;
     color: #fff;
-    cursor: pointer;
-    user-select: none;
     font-size: 1em;
+    cursor: pointer;
+    flex-direction: column;
+    user-select: none;
 
     md-card-title {
+        margin: 0;
+        color: $cardMainFontColor;
         font-size: 16px;
         font-weight: 300;
-        color: $cardMainFontColor;
-        margin: 0;
     }
-    
+
     md-card-subtitle {
-        font-size: 1em;
         color: $cardMainFontColor;
+        font-size: 1em;
         font-weight: 500;
     }
 
@@ -39,7 +39,7 @@ md-card {
         justify-content: space-around;
 
         button {
-            min-width: 0
+            min-width: 0;
         }
     }
 }

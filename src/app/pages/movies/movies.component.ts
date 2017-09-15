@@ -4,9 +4,9 @@ import { MediaModel, WatchListService } from '../../services/watchlist.service';
 import { Observable } from 'rxjs/Rx';
 
 export enum MovieFilterType {
-	All,
-	Favorites,
-	Watchlist
+    All,
+    Favorites,
+    Watchlist
 }
 
 @Component({
@@ -17,9 +17,9 @@ export enum MovieFilterType {
 export class MoviesComponent implements OnInit {
     public filterType: MovieFilterType;
     public watchList: Observable<MediaModel[]>;
-    
+
     constructor(private movieStoreService: WatchListService, route: ActivatedRoute) {
-    	this.filterType = route.snapshot.data.filterType;
+        this.filterType = route.snapshot.data.filterType;
     }
 
     private setMoviesList() {
