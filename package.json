@@ -12,6 +12,9 @@
         "e2e": "protractor protractor.conf.js",
         "webdriver-update": "webdriver-manager update"
     },
+    "pre-commit": [
+        "lint:scss"
+    ],
     "private": true,
     "dependencies": {
         "@angular/animations": "4.1.3",
