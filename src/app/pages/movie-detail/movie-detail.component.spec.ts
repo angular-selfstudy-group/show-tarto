@@ -1,6 +1,6 @@
 /* import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Params } from '@angular/router';
-import { MaterialModule } from '@angular/material';
+import { MaterialComponentsModule } from 'app/material.components.module';
 
 import { Observable } from 'rxjs/Rx';
 
@@ -38,7 +38,7 @@ describe('Movie Detail Component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule],
+      imports: [MaterialComponentsModule],
       declarations: [MovieDetailComponent],
       providers: [
         { provide: SearchService, useClass: MockSearchService },

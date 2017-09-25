@@ -1,13 +1,43 @@
-import {
-    MdSidenavModule, MdToolbarModule, MdIconModule, MdButtonModule, MdButtonToggleModule,
-    MdCardModule, MdTooltipModule, MdProgressSpinnerModule, MdAutocompleteModule, MdInputModule,
-} from '@angular/material';
 import { NgModule } from '@angular/core';
 
+import {
+    MdCardModule,
+    MdIconModule,
+    MdInputModule,
+    MdButtonModule,
+    MdSidenavModule,
+    MdToolbarModule,
+    MdTooltipModule,
+    MdAutocompleteModule,
+    MdButtonToggleModule,
+    MdProgressSpinnerModule
+} from '@angular/material';
+
+
 @NgModule({
-  imports: [MdSidenavModule, MdToolbarModule, MdIconModule, MdButtonModule, MdButtonToggleModule,
-    MdCardModule, MdTooltipModule, MdProgressSpinnerModule, MdAutocompleteModule, MdInputModule],
-  exports: [MdSidenavModule, MdToolbarModule, MdIconModule, MdButtonModule, MdButtonToggleModule,
-    MdCardModule, MdTooltipModule, MdProgressSpinnerModule, MdAutocompleteModule, MdInputModule],
+    imports: [
+        MdCardModule,
+        MdIconModule,
+        MdInputModule,
+        MdButtonModule,
+        MdSidenavModule,
+        MdToolbarModule,
+        MdTooltipModule,
+        MdAutocompleteModule,
+        MdButtonToggleModule,
+        MdProgressSpinnerModule
+    ],
+    exports: [
+        MdCardModule,
+        MdIconModule,
+        MdInputModule,
+        MdButtonModule,
+        MdSidenavModule,
+        MdToolbarModule,
+        MdTooltipModule,
+        MdAutocompleteModule,
+        MdButtonToggleModule,
+        MdProgressSpinnerModule
+    ]
 })
 export class MaterialComponentsModule { }

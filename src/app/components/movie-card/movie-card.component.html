@@ -1,30 +1,26 @@
-<div class="card-holder">
+<md-card *ngIf="!isLoading" (click)="cardClick()" role="group">
     <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
-    <div flex-xs flex-gt-xs="50" layout="column">
-        <md-card *ngIf="!isLoading" (click)="cardClick()" role="group">
-            <img md-card-image src="{{Model.poster_bg}}">
-            <md-card-title>
-                {{ Model.title }}
-                <small>{{ Model.release_date.getFullYear() }}</small>
-            </md-card-title>
-            <md-card-content layout="row" layout-align="start center">
-                <p>
-                    {{ Model.overview }}
-                </p>
-            </md-card-content>
-            <md-card-actions layout="row" layout-align="end center">
-                <button md-icon-button mdTooltip="Add to favorite" [mdTooltipPosition]="tooltipPosition" (click)="favorite($event)">
+    <img md-card-image src="{{Model.poster_bg}}">
+    <md-card-title>
+        {{ Model.title }}
+        <br><small>({{ Model.release_date | date:"yyyy" }})</small>
+    </md-card-title>
+    <md-card-content layout="row" layout-align="start center">
+        <p>
+            {{ Model.overview }}
+        </p>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <button md-icon-button mdTooltip="Add to favorite" [mdTooltipPosition]="tooltipPosition" (click)="favorite($event)">
                     <md-icon>favorite_border</md-icon>
                 </button>
-                <button md-icon-button *ngIf="!addedToWatchList" mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
-                    [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+        <button md-icon-button *ngIf="!addedToWatchList" mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
+            [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
                     <md-icon>playlist_add</md-icon>
                 </button>
-                <button md-icon-button *ngIf="addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
-                    [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+        <button md-icon-button *ngIf="addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
+            [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
                     <md-icon>remove</md-icon>
                 </button>
-            </md-card-actions>
-        </md-card>
-    </div>
-</div>
+    </md-card-actions>
+</md-card>

@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    private popularMovies: CardModel[];
+    public popularMovies: CardModel[];
     public isLoading: boolean;
 
     constructor(private _searchService: SearchService) { }

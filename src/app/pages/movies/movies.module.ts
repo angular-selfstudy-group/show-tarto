@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { MaterialModule } from '@angular/material';
+import { MaterialComponentsModule } from 'app/material.components.module';
+
 
 import { SharedModule } from './../../shared.module';
 import { MoviesRoutingModule } from './movies-routing.module';
@@ -8,7 +9,7 @@ import { ServicesModule } from '../../services/';
 import { MovieCardModule } from '../../components/movie-card/movie-card.module';
 
 @NgModule({
-    imports: [MoviesRoutingModule, ServicesModule, SharedModule, MovieCardModule, MaterialModule],
+    imports: [MoviesRoutingModule, ServicesModule, SharedModule, MovieCardModule, MaterialComponentsModule],
     exports: [],
     declarations: [MoviesComponent]
 })

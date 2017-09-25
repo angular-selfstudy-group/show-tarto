@@ -49,6 +49,6 @@ body {
     display: flex;
     padding: .5em 0;
     width: calc(100% + 1em);
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }

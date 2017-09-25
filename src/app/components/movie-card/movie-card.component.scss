@@ -4,6 +4,8 @@
 $cardMainFontColor: lighten(mat-color($primary), 10%);
 
 :host {
+    display: flex;
+    margin: 0 0 1em;
     height: 15em;
     font-size: 1em;
     flex: 0 0 10.96em;
@@ -18,6 +20,7 @@ md-card {
     color: #fff;
     font-size: 1em;
     cursor: pointer;
+    justify-content: space-between;
     flex-direction: column;
     user-select: none;
 

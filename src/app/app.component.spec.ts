@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
-import { MaterialModule } from '@angular/material';
+import { MaterialComponentsModule } from 'app/material.components.module';
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +11,7 @@ describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                MaterialModule,
+                MaterialComponentsModule,
                 RouterTestingModule
             ],
             declarations: [
