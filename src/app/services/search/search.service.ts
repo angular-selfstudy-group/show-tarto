@@ -1,5 +1,5 @@
 import { SearchService as SearchServiceBase } from '../search.service';
-import { ConfigurationService } from 'app/services';
+import { ConfigurationService } from '../configuration/configuration.service';
 import { Show, CardModel, MovieDetailModel } from './../../models';
 
 import { Injectable } from '@angular/core';
