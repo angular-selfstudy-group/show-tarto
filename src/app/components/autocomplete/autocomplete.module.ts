@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from './../../shared.module'
 
 import { AutoCompleteComponent } from './autocomplete.component';
-import { MaterialComponentsModule } from 'app/material.components.module';
+import { MdIconModule, MdButtonModule, MdAutocompleteModule, MdInputModule } from '@angular/material';
 
 @NgModule({
-    imports: [SharedModule, MaterialComponentsModule],
+    imports: [
+        SharedModule,
+        MdIconModule, MdAutocompleteModule, MdInputModule, MdButtonModule
+    ],
     exports: [AutoCompleteComponent],
     declarations: [AutoCompleteComponent],
     providers: [],

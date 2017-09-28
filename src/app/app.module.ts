@@ -14,7 +14,7 @@ import { ServicesModule } from 'app/services';
 
 // Shared module
 import { SharedModule } from './shared.module';
-import { MaterialComponentsModule } from 'app/material.components.module';
+import { MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -23,16 +23,9 @@ import { MaterialComponentsModule } from 'app/material.components.module';
   imports: [
     BrowserModule,
     SharedModule,
-    MaterialComponentsModule,
+    MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule,
     AppRoutingModule,
-    ServicesModule,
-    ComponentsModule,
     PagesModule
-  ],
-  exports: [
-    MaterialComponentsModule,
-    AppRoutingModule,
-    ServicesModule
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
