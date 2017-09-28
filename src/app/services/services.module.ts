@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { DataService as DataServiceBase } from './data/data.service';
+import { DataService as DataServiceBase } from './data.service';
+
 import { DataService } from './data/data.service';
 
 import { SearchService as SearchServiceBase } from './search.service';
