@@ -1,5 +1,5 @@
 import { SearchService as SearchServiceBase } from '../search.service';
-import { ConfigurationService } from 'app/services';
+import { ConfigurationService } from '../configuration.service';
 import { Show, CardModel, MovieDetailModel } from './../../models';
 
 import { Injectable } from '@angular/core';
@@ -7,7 +7,6 @@ import { Response, Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-
 
 @Injectable()
 export class SearchService extends SearchServiceBase {
