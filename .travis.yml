@@ -8,7 +8,7 @@ before_script:
   - npm install
 script:
   - npm run lint
-  - ng build -prod
+  - ng build --env=prod
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN --non-interactive
