@@ -1,16 +1,22 @@
 language: node_js
 node_js:
   - "stable"
-install:
+
+before_install:
   - npm install -g firebase-tools
 
-before_script:
+install:
   - npm install
-script:
+
+before_script:
   - npm run lint
+
+script:
   - ng build --env=prod
+  - firebase login --reauth
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN --non-interactive
+
 notifications:
     slack: epmbetsupergroup:zHdM0sziVroLLnUdzqS5hoQu
