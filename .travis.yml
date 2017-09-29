@@ -13,10 +13,13 @@ before_script:
 
 script:
   - ng build --env=prod
-  - firebase login --reauth
 
-after_success:
-  - firebase deploy --token $FIREBASE_TOKEN --non-interactive
+
+deploy:
+  provider: firebase
+  token:
+    secure:  "$FIREBASE_TOKEN"
+  project: "show-tarto"
 
 notifications:
     slack: epmbetsupergroup:zHdM0sziVroLLnUdzqS5hoQu
