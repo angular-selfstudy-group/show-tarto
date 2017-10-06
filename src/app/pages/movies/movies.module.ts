@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from './../../shared.module';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesComponent } from './movies.component';
 import { ServicesModule } from '../../services/';
@@ -8,7 +9,8 @@ import { MdIconModule, MdButtonToggleModule } from '@angular/material';
 
 @NgModule({
     imports: [
-        MoviesRoutingModule, ServicesModule, SharedModule, MovieCardModule,
+        CommonModule, FormsModule,
+        MoviesRoutingModule, ServicesModule, MovieCardModule,
         MdIconModule, MdButtonToggleModule
     ],
     exports: [],
