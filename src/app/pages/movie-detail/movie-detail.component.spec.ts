@@ -1,16 +1,15 @@
-/* import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Params } from '@angular/router';
-import { MaterialComponentsModule } from 'app/material.components.module';
 
 import { Observable } from 'rxjs/Rx';
 
-import { MockSearchService } from 'app/shared/mocks/service/movie-detail.mock';
+import { MockSearchService } from 'app/pages/movie-detail/movie-detail.mock';
 
 import { WatchListService, SearchService } from 'app/services/index';
 import { MovieDetailModel, GenreModel } from 'app/models';
 import { MovieDetailComponent } from './movie-detail.component';
 
-import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
+import { MdProgressSpinnerModule, MdIconModule, MdButtonModule } from '@angular/material';
 
 class MockWatchListService {
   public isFavorite(id: number): boolean {
@@ -38,7 +37,7 @@ describe('Movie Detail Component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialComponentsModule],
+      imports: [MdProgressSpinnerModule, MdIconModule, MdButtonModule],
       declarations: [MovieDetailComponent],
       providers: [
         { provide: SearchService, useClass: MockSearchService },
@@ -48,11 +47,11 @@ describe('Movie Detail Component', () => {
     })
 
     fixture = TestBed
-    // .overrideComponent(MovieDetailComponent, {
-    //   set: {
-    //     template: '<span>Hello</span>'
-    //   }
-    // })
+    .overrideComponent(MovieDetailComponent, {
+      set: {
+        template: '<span>Hello</span>'
+      }
+    })
     .createComponent(MovieDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -63,4 +62,3 @@ describe('Movie Detail Component', () => {
     expect(component).toBeTruthy();
   });
 });
- */
