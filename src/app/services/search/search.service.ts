@@ -2,7 +2,7 @@ import { SearchService as SearchServiceBase } from '../search.service';
 
 import { ConfigurationService } from '../configuration.service';
 
-import { Show, CardModel, MovieDetailModel } from './../../models';
+import { Show, Card, MovieDetail } from './../../models';
 
 import { Injectable } from '@angular/core';
 import { Response, Jsonp } from '@angular/http';
@@ -45,7 +45,7 @@ export class SearchService extends SearchServiceBase {
             );
     }
 
-    public GetPopularMovies(): Observable<CardModel[]> {
+    public GetPopularMovies(): Observable<Card[]> {
         const uri = '/movie/popular';
 
         return this.getJSONP(uri)
@@ -58,12 +58,12 @@ export class SearchService extends SearchServiceBase {
                         description: json.overview,
                         releaseYear: json.release_date,
                         posterUrl: this.getDefaultPosterIfEmpty(json.backdrop_path || json.poster_path, '1000')
-                    } as CardModel;
+                    } as Card;
                 })
             );
     }
 
-    public GetMovieDetails(id: number): Observable<MovieDetailModel> {
+    public GetMovieDetails(id: number): Observable<MovieDetail> {
         const uri = `/movie/${id}`;
 
         return this.getJSONP(uri)
@@ -86,7 +86,7 @@ export class SearchService extends SearchServiceBase {
                     runtime: json.runtime,
                     revenue: this.convertRevenue(json.revenue),
                     vote_average: json.vote_average
-                } as MovieDetailModel;
+                } as MovieDetail;
             });
     }
 

@@ -1,5 +1,5 @@
-export { CardModel } from './card.model';
-export { MovieDetailModel } from './movie-detail.model'
+export { Card } from './card.model';
+export { MovieDetail } from './movie-detail.model'
 export { Show } from './show.model';
-export { GenreModel } from './genre.model';
-export { MediaModel } from './media.model';
+export { Genre } from './genre.model';
+export { Media } from './media.model';

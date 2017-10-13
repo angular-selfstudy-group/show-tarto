@@ -1,17 +1,17 @@
-import { MediaModel } from './../models';
+import { Media } from './../models';
 import { Observable } from 'rxjs/Observable';
-export { MediaModel } from './../models';
+export { Media } from './../models';
 export abstract class WatchListService {
-    public abstract getAll(): Observable<MediaModel[]>;
-    public abstract getWatchlist(): Observable<MediaModel[]>;
-    public abstract getFavorites(): Observable<MediaModel[]>;
+    public abstract getAll(): Observable<Media[]>;
+    public abstract getWatchlist(): Observable<Media[]>;
+    public abstract getFavorites(): Observable<Media[]>;
 
-    public abstract addToWatchlist(item: MediaModel);
-    public abstract addToFavorites(item: MediaModel);
+    public abstract addToWatchlist(item: Media);
+    public abstract addToFavorites(item: Media);
 
     public abstract isFavorite(mediaId: number): boolean;
     public abstract isWatchlist(mediaId: number): boolean;
 
-    public abstract remove(item: MediaModel);
-    public abstract contains(item: MediaModel): boolean;
+    public abstract remove(item: Media);
+    public abstract contains(item: Media): boolean;
 }

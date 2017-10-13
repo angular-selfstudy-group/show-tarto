@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MovieStoreServiceBase, Movie } from '../movie-store.service.base';
+import { MovieStoreService as MovieStoreServiceBase, Movie } from '../movie-store.service';
 
 @Injectable()
 export class MovieStoreService extends MovieStoreServiceBase {

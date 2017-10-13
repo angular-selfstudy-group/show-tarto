@@ -1,6 +1,6 @@
-import { MediaModel } from './';
+import { Media } from './';
 
-export interface CardModel extends MediaModel {
+export interface Card extends Media {
     title: string;
     description: string;
     releaseYear: number;
