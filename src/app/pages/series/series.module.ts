@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { SeriesRoutingModule } from './series-routing.module';
 import { SeriesComponent } from './series.component';
 

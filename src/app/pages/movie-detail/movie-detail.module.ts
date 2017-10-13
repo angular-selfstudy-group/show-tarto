@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MaterialComponentsModule } from 'app/material.components.module';
+import { MdProgressSpinnerModule, MdIconModule, MdButtonModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { MovieDetailComponent } from './movie-detail.component';
 import { MovieDetailRoutingModule } from './movie-detail-routing.module';
@@ -7,8 +7,8 @@ import { MovieDetailRoutingModule } from './movie-detail-routing.module';
 @NgModule({
     imports: [
         MovieDetailRoutingModule,
-        MaterialComponentsModule,
-        CommonModule
+        CommonModule,
+        MdProgressSpinnerModule, MdIconModule, MdButtonModule
     ],
     exports: [],
     declarations: [MovieDetailComponent],

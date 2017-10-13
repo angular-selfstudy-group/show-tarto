@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { ComponentsModule } from './../../components/components.module';
 import { AutoCompleteComponent } from './../../components/autocomplete/autocomplete.component';
-import { SharedModule } from './../../shared.module';
-import { MaterialComponentsModule } from 'app/material.components.module';
+import { MdProgressSpinnerModule  } from '@angular/material';
 
 @NgModule({
-    imports: [ComponentsModule, SharedModule, MaterialComponentsModule],
+    imports: [
+        CommonModule,
+        ComponentsModule,
+        MdProgressSpinnerModule
+    ],
     declarations: [HomeComponent],
     providers: [],
 })
