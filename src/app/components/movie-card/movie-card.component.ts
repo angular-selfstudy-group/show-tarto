@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SearchService } from './../../services/'
-import { MovieDetailModel } from './../../models';
+import { MovieDetail } from './../../models';
 import { Router } from '@angular/router';
-import { WatchListService, MediaModel } from '../../services/watchlist.service';
+import { WatchListService, Media } from '../../services/watchlist.service';
 
 @Component({
     selector: 'st-moviecard',
@@ -11,7 +11,7 @@ import { WatchListService, MediaModel } from '../../services/watchlist.service';
 })
 export class MovieCardComponent implements OnInit {
     @Input() Id: number;
-    public Model: MovieDetailModel;
+    public Model: MovieDetail;
     public isLoading: boolean;
     public tooltipPosition: string;
     public tooltipText: string;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MediaModel, WatchListService } from '../../services/watchlist.service';
+import { Media, WatchListService } from '../../services/watchlist.service';
 import { Observable } from 'rxjs/Rx';
 
 export enum MovieFilterType {
@@ -16,7 +16,7 @@ export enum MovieFilterType {
 })
 export class MoviesComponent implements OnInit {
     public filterType: MovieFilterType;
-    public watchList: Observable<MediaModel[]>;
+    public watchList: Observable<Media[]>;
 
     constructor(private movieStoreService: WatchListService, route: ActivatedRoute) {
         this.filterType = route.snapshot.data.filterType;

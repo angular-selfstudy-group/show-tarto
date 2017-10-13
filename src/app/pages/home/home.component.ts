@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AutoCompleteComponent } from './../../components/autocomplete/autocomplete.component';
-import { CardModel } from './../../models';
+import { Card } from './../../models';
 import { SearchService } from './../../services';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    public popularMovies: CardModel[];
+    public popularMovies: Card[];
     public isLoading: boolean;
 
     constructor(private _searchService: SearchService) { }

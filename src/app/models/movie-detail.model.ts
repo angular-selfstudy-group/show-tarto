@@ -1,12 +1,12 @@
-import { GenreModel } from './';
-import { MediaModel } from './';
+import { Genre } from './';
+import { Media } from './';
 
-export interface MovieDetailModel extends MediaModel {
+export interface MovieDetail extends Media {
     imdb_id: string;
     title: string;
     poster: string;
     poster_bg: string;
-    genres: GenreModel[];
+    genres: Genre[];
     overview: string;
     original_language: string;
     popularity: number;

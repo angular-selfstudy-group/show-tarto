@@ -10,7 +10,7 @@ import { SearchService } from './search/search.service';
 import { ConfigurationService as ConfigurationServiceBase } from './configuration.service';
 import { ConfigurationService } from './configuration/configuration.service';
 
-import { MovieStoreServiceBase } from './movie-store.service.base';
+import { MovieStoreService as MovieStoreServiceBase } from './movie-store.service';
 import { MovieStoreService } from './movie-store/movie-store.service';
 
 import { WatchListService as WatchListServiceBase } from './watchlist.service';

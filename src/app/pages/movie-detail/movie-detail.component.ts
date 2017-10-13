@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MovieDetailModel } from 'app/models';
+import { MovieDetail } from 'app/models';
 import { SearchService, WatchListService } from './../../services';
 
 @Component({
@@ -10,7 +10,7 @@ import { SearchService, WatchListService } from './../../services';
 })
 export class MovieDetailComponent implements OnInit {
 
-  public Model: MovieDetailModel;
+  public Model: MovieDetail;
   public id: number;
   public isLoading: boolean;
   public isFavorite: boolean;

@@ -1,4 +1,4 @@
-export interface MediaModel {
+export interface Media {
     id: number;
     addedDate: Date;
     isFavorite: boolean;

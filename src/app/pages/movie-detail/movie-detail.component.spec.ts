@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Rx';
 import { MockSearchService } from 'app/pages/movie-detail/movie-detail.mock';
 
 import { WatchListService, SearchService } from 'app/services/index';
-import { MovieDetailModel, GenreModel } from 'app/models';
+import { MovieDetail, Genre } from 'app/models';
 import { MovieDetailComponent } from './movie-detail.component';
 
 import { MdProgressSpinnerModule, MdIconModule, MdButtonModule } from '@angular/material';
@@ -18,9 +18,9 @@ class MockWatchListService {
   public isWatchlist(id: number): boolean {
     return true;
   }
-  public remove(Model: MovieDetailModel) { }
-  public addToFavorites(Model: MovieDetailModel) { }
-  public addToWatchlist(Model: MovieDetailModel) { }
+  public remove(Model: MovieDetail) { }
+  public addToFavorites(Model: MovieDetail) { }
+  public addToWatchlist(Model: MovieDetail) { }
 }
 
 class MockActivatedRoute {
