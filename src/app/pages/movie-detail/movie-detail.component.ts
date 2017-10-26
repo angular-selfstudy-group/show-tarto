@@ -31,9 +31,9 @@ export class MovieDetailComponent implements OnInit {
 
   toggleFavorite() {
     if (this.isFavorite) {
-      this.watchlistService.remove(this.Model);
+      this.watchlistService.remove(this.Model.id);
     } else {
-      this.watchlistService.addToFavorites(this.Model);
+      this.watchlistService.addToFavorites(this.Model.id);
     }
 
     this.isFavorite = !this.isFavorite;
@@ -41,9 +41,9 @@ export class MovieDetailComponent implements OnInit {
 
   toggleWatchlist() {
     if (this.isWatchlist) {
-      this.watchlistService.remove(this.Model);
+      this.watchlistService.remove(this.Model.id);
     } else {
-      this.watchlistService.addToWatchlist(this.Model);
+      this.watchlistService.addToWatchlist(this.id);
     }
 
     this.isWatchlist = !this.isWatchlist;

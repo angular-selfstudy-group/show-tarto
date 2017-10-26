@@ -40,12 +40,12 @@ export class AutoCompleteComponent implements OnInit {
     }
 
     addToWatchList(show: Show, event) {
-        this.watchlistService.addToWatchlist(show);
+        this.watchlistService.addToWatchlist(show.id);
         event.stopPropagation();
     }
 
     addToFavorites(show: Show, event) {
-        this.watchlistService.addToFavorites(show);
+        this.watchlistService.addToFavorites(show.id);
         event.stopPropagation();
     }
 }
