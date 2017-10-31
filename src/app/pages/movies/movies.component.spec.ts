@@ -3,25 +3,25 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { MdIconModule, MdButtonToggleModule } from '@angular/material';
 import { Observable } from 'rxjs/Rx';
 import { MockSearchService } from 'app/pages/movie-detail/movie-detail.mock';
-import { WatchListService, SearchService } from 'app/services/index';
-import { MovieDetail, Genre, Media } from 'app/models';
+import { WatchListService, SearchService } from 'app/services';
+import { MovieDetail, Genre } from 'app/models';
 import { MoviesComponent } from './movies.component';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MovieCardModule } from '../../components/movie-card/movie-card.module';
+import { MovieCardModule } from 'app/components/movie-card/movie-card.module';
 import { FormsModule } from '@angular/forms';
 
 class MockWatchListService extends WatchListService {
-  public getAll(): Observable<Media[]> {
+  public getAll(): Observable<number[]> {
     return Observable.empty();
   }
-  public getWatchlist(): Observable<Media[]> {
+  public getWatchlist(): Observable<number[]> {
     return Observable.empty();
   }
-  public getFavorites(): Observable<Media[]> {
+  public getFavorites(): Observable<number[]> {
     return Observable.empty();
   }
-  public contains(item: Media): boolean {
+  public contains(item: number): boolean {
     return false;
   }
   public isFavorite(id: number): boolean {
@@ -30,9 +30,9 @@ class MockWatchListService extends WatchListService {
   public isWatchlist(id: number): boolean {
     return true;
   }
-  public remove(Model: MovieDetail) { }
-  public addToFavorites(Model: MovieDetail) { }
-  public addToWatchlist(Model: MovieDetail) { }
+  public remove(Model: number) { }
+  public addToFavorites(Model: number) { }
+  public addToWatchlist(Model: number) { }
 }
 
 class MockActivatedRoute {
