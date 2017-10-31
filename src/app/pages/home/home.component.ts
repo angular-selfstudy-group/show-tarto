@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AutoCompleteComponent } from './../../components/autocomplete/autocomplete.component';
-import { Card } from './../../models';
 import { SearchService } from './../../services';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -11,17 +10,17 @@ import 'rxjs/add/operator/map';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    public popularMovies: Card[];
+    public popularMovieIds: number[];
     public isLoading: boolean;
 
     constructor(private _searchService: SearchService) { }
     ngOnInit() {
         this.isLoading = true;
-        this._searchService.GetPopularMovies().subscribe(results => {
+        this._searchService.GetPopularMovieIds().subscribe(results => {
             const maxIndex = results.length - 1;
             const itemsToShow = 10;
             const randomIndex = Math.floor(Math.random() * (maxIndex - itemsToShow)) + itemsToShow;
-            this.popularMovies = results.slice(randomIndex - itemsToShow, randomIndex);
+            this.popularMovieIds = results.slice(randomIndex - itemsToShow, randomIndex);
             this.isLoading = false;
         });
     }
