@@ -13,6 +13,6 @@
 		</md-button-toggle-group>
 	</div>
     <div class="center-list">
-        <st-moviecard *ngFor="let movie of watchList | async" [Id]='movie.id'></st-moviecard>
+        <st-moviecard *ngFor="let id of watchListIds | async" [Id]='id'></st-moviecard>
     </div>
 </div>

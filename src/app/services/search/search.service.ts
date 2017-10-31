@@ -1,8 +1,6 @@
-import { SearchService as SearchServiceBase } from '../search.service';
-
-import { ConfigurationService } from '../configuration.service';
-
-import { Show, Card, MovieDetail } from './../../models';
+import { SearchService as SearchServiceBase } from 'app/services/search.service';
+import { ConfigurationService } from 'app/services/configuration.service';
+import { Show, MovieDetail } from 'app/models';
 
 import { Injectable } from '@angular/core';
 import { Response, Jsonp } from '@angular/http';
@@ -45,21 +43,12 @@ export class SearchService extends SearchServiceBase {
             );
     }
 
-    public GetPopularMovies(): Observable<Card[]> {
+    public GetPopularMovieIds(): Observable<number[]> {
         const uri = '/movie/popular';
 
         return this.getJSONP(uri)
             .map(resp => resp.results
-                .map(json => {
-                    return {
-                        id: json.id,
-                        type: 'movie',
-                        title: json.title,
-                        description: json.overview,
-                        releaseYear: json.release_date,
-                        posterUrl: this.getDefaultPosterIfEmpty(json.backdrop_path || json.poster_path, '1000')
-                    } as Card;
-                })
+                .map(json => json.id)
             );
     }
 

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SearchService } from './../../services/'
 import { MovieDetail } from './../../models';
 import { Router } from '@angular/router';
-import { WatchListService, Media } from '../../services/watchlist.service';
+import { WatchListService } from '../../services/watchlist.service';
 
 @Component({
     selector: 'st-moviecard',
@@ -45,9 +45,9 @@ export class MovieCardComponent implements OnInit {
 
     private toggleWatchlist(event: Event) {
         if (this.addedToWatchList) {
-            this._watchlistService.remove(this.Model);
+            this._watchlistService.remove(this.Model.id);
         } else {
-            this._watchlistService.addToWatchlist(this.Model);
+            this._watchlistService.addToWatchlist(this.Model.id);
         }
         this.addedToWatchList = !this.addedToWatchList;
         event.stopPropagation();
@@ -55,9 +55,9 @@ export class MovieCardComponent implements OnInit {
 
     private toggleFavorites() {
         if (this.addedToFavorites) {
-            this._watchlistService.remove(this.Model);
+            this._watchlistService.remove(this.Model.id);
         } else {
-            this._watchlistService.addToFavorites(this.Model);
+            this._watchlistService.addToFavorites(this.Model.id);
         }
         this.addedToFavorites = !this.addedToFavorites;
         event.stopPropagation();

@@ -1,6 +1,5 @@
-import { Media } from './';
-
-export interface Show extends Media {
+export interface Show {
+    id: number;
     title: string;
     year: number;
     posterUrl: string;

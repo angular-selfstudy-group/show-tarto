@@ -1,7 +1,7 @@
 import { Genre } from './';
-import { Media } from './';
 
-export interface MovieDetail extends Media {
+export interface MovieDetail {
+    id: number;
     imdb_id: string;
     title: string;
     poster: string;
