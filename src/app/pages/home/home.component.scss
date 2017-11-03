@@ -5,11 +5,6 @@
     flex: 0 0 calc(#{$keyNum}% - #{$margin}em);
 }
 
-.app-search {
-    display: block;
-    margin: 1em auto 0;
-}
-
 .popular-list {
     .spinner {
         margin: 0 auto;
