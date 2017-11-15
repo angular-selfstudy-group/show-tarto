@@ -1,8 +1,6 @@
 @import '~@angular/material/theming';
 @import 'src/styles/theme.scss';
 
-$cardMainFontColor: lighten(mat-color($primary), 10%);
-
 :host {
     display: flex;
     margin: 0 0 1em;
@@ -26,23 +24,25 @@ md-card {
 
     md-card-title {
         margin: 0;
-        color: $cardMainFontColor;
-        font-size: 16px;
-        font-weight: 300;
+        color: mat-color($primary);
+        font-size: .727em;
+        font-weight: 600;
     }
 
-    md-card-subtitle {
-        color: $cardMainFontColor;
-        font-size: 1em;
-        font-weight: 500;
+    md-card-content {
+        font-size: .636em;
     }
 
-    md-card-actions {
+    md-card-actions.mat-card-actions {
         display: flex;
         justify-content: space-around;
+        margin-bottom: 0;
+        padding: 0;
 
         button {
+            padding: 0;
             min-width: 0;
+            font-size: .928em;
         }
     }
 }

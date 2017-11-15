@@ -1,4 +1,17 @@
-md-input-container {
+@import '~@angular/material/theming';
+@import 'src/styles/theme.scss';
+
+:host {
+    display: block;
+    margin: 1em auto 0;
+
+    @media (max-width: 376px) {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+}
+
+md-input-container.mat-form-field {
     width: 100%;
 
     md-icon {
@@ -36,17 +49,20 @@ md-option {
             padding: 0;
             grid-area: title;
             align-self: center;
+            color: mat-color($primary);
         }
 
         .buttons {
             float: right;
             grid-area: buttons;
             align-self: center;
+            font-size: 1em;
 
             button {
                 margin: 0;
                 padding: 0;
                 min-width: 0;
+                font-size: 1.3em;
             }
         }
 
