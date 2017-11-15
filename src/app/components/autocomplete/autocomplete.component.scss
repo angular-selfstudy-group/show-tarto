@@ -47,16 +47,16 @@ md-option {
         .title {
             margin: 0;
             padding: 0;
+            color: mat-color($primary);
             grid-area: title;
             align-self: center;
-            color: mat-color($primary);
         }
 
         .buttons {
             float: right;
+            font-size: 1em;
             grid-area: buttons;
             align-self: center;
-            font-size: 1em;
 
             button {
                 margin: 0;
