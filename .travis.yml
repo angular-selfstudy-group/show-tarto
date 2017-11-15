@@ -14,12 +14,10 @@ before_script:
 script:
   - ng build --env=prod
 
-
 deploy:
-  provider: firebase
-  token:
-    secure:  "$FIREBASE_TOKEN"
-  project: "show-tarto"
+    provider: firebase
+    token:  "$FIREBASE_TOKEN"
+    project: "show-tarto"
 
 notifications:
     slack: epmbetsupergroup:zHdM0sziVroLLnUdzqS5hoQu
