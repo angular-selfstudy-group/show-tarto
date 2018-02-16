@@ -1,12 +1,12 @@
 @import '~@angular/material/theming';
 @import 'src/styles/theme.scss';
 
-md-sidenav-container {
+mat-sidenav-container {
     height: 100%;
     font-size: 1.4em;
 }
 
-md-sidenav {
+mat-sidenav {
     width: 250px;
     box-shadow: 3px 0 6px rgba(0, 0, 0, .24);
     transition: transform .4s cubic-bezier(.25, .8, .25, 1);

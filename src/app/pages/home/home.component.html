@@ -1,7 +1,7 @@
 <main class="container">
     <st-autocomplete class="app-search"></st-autocomplete>
     <div class="popular-list">
-        <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
+        <mat-spinner *ngIf="isLoading" class="spinner"></mat-spinner>
         <div *ngIf="!isLoading" class="center-list">
             <st-moviecard *ngFor="let id of popularMovieIds" [Id]='id'></st-moviecard>
         </div>

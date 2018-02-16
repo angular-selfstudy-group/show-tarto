@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
 import { ComponentsModule } from './../../components/components.module';
-import { MdProgressSpinnerModule  } from '@angular/material';
+import { MatProgressSpinnerModule  } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -12,7 +12,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ComponentsModule, BrowserAnimationsModule, MdProgressSpinnerModule, RouterTestingModule],
+      imports: [ComponentsModule, BrowserAnimationsModule, MatProgressSpinnerModule, RouterTestingModule],
       declarations: [ HomeComponent ]
     })
     .compileComponents();

@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { ComponentsModule } from './../../components/components.module';
 import { AutoCompleteComponent } from './../../components/autocomplete/autocomplete.component';
-import { MdProgressSpinnerModule  } from '@angular/material';
+import { MatProgressSpinnerModule  } from '@angular/material';
 
 @NgModule({
     imports: [
         CommonModule,
         ComponentsModule,
-        MdProgressSpinnerModule
+        MatProgressSpinnerModule
     ],
     declarations: [HomeComponent],
     providers: [],

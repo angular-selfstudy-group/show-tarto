@@ -5,7 +5,7 @@ describe('-= Show tarto app - E2E tests =-', () => {
 
   let page: ShowTartoPage;
 
-  let navItem = element.all(by.css('md-sidenav h3'));
+  let navItem = element.all(by.css('mat-sidenav h3'));
   let menuButton = element(by.css('.mat-toolbar-row > .mat-icon-button'));
 
   beforeEach(() => {

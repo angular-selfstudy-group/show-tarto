@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Params } from '@angular/router';
-import { MdIconModule, MdButtonToggleModule } from '@angular/material';
+import { MatIconModule, MatButtonToggleModule } from '@angular/material';
 import { Observable } from 'rxjs/Rx';
 import { MockSearchService } from 'app/pages/movie-detail/movie-detail.mock';
 import { WatchListService, SearchService } from 'app/services';
@@ -49,7 +49,7 @@ describe('MoviesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MdIconModule, MdButtonToggleModule, BrowserAnimationsModule, MovieCardModule, FormsModule],
+      imports: [MatIconModule, MatButtonToggleModule, BrowserAnimationsModule, MovieCardModule, FormsModule],
       declarations: [MoviesComponent],
       providers: [
         { provide: SearchService, useClass: MockSearchService },

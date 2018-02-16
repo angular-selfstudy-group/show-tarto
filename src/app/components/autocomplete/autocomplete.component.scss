@@ -11,10 +11,10 @@
     }
 }
 
-md-input-container.mat-form-field {
+mat-input-container.mat-form-field {
     width: 100%;
 
-    md-icon {
+    mat-icon {
         margin-right: 1em;
         vertical-align: middle;
     }
@@ -23,7 +23,7 @@ md-input-container.mat-form-field {
 $option-height: 4.688em;
 $option-padding: .313em;
 
-md-option {
+mat-option {
     height: 100%;
 
     .show-result {
@@ -75,7 +75,7 @@ md-option {
 }
 
 @media (max-width: 600px) {
-    md-option {
+    mat-option {
         height: 100%;
 
         .show-result {

@@ -1,7 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 let searchInput = element(by.css('.mat-input-element'));
-let sideNav = element(by.css('md-sidenav'));
+let sideNav = element(by.css('mat-sidenav'));
 let menuButton = element(by.css('.mat-toolbar-row > .mat-icon-button'));
 
 export class ShowTartoPage {
@@ -19,7 +19,7 @@ export class ShowTartoPage {
   }
 
   getToolbar() {
-    return element(by.css('md-toolbar-row')).isDisplayed();
+    return element(by.css('mat-toolbar-row')).isDisplayed();
   }
 
   getSearchInput() {

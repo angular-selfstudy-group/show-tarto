@@ -1,16 +1,17 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovieCardComponent } from './movie-card.component'
 import { ServicesModule } from '../../services';
-import { MdIconModule, MdButtonModule, MdCardModule, MdTooltipModule  } from '@angular/material';
+import { MatIconModule, MatButtonModule, MatCardModule, MatTooltipModule  } from '@angular/material';
 
 @NgModule({
     imports: [
         CommonModule, ServicesModule,
-        MdIconModule, MdButtonModule, MdCardModule, MdTooltipModule,
+        MatIconModule, MatButtonModule, MatCardModule, MatTooltipModule,
     ],
     exports: [MovieCardComponent],
     declarations: [MovieCardComponent],
-    providers: []
+    providers: [],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MovieCardModule { }

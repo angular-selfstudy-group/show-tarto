@@ -1,4 +1,4 @@
-<md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
+<mat-spinner *ngIf="isLoading" class="spinner"></mat-spinner>
 <section *ngIf="!isLoading" class="movie-page">
   <header class="movie-header">
     <div class="movie-cover-picture" [ngStyle]="{'background-image': 'url('+Model.poster_bg+')'}"> </div>
@@ -38,12 +38,12 @@
   </header>
   <main class="movie-main container">
     <div class="movie-action-buttons">
-      <button md-raised-button [ngClass]="{'added': isWatchlist}" class="add-to-whatchlist" (click)="toggleWatchlist()">
-        <md-icon>{{isWatchlist ? 'remove' : 'playlist_add'}}</md-icon>
+      <button mat-raised-button [ngClass]="{'added': isWatchlist}" class="add-to-whatchlist" (click)="toggleWatchlist()">
+        <mat-icon>{{isWatchlist ? 'remove' : 'playlist_add'}}</mat-icon>
         Watchlist
       </button>
-      <button md-raised-button [ngClass]="{'favorited': isFavorite}" class="add-to-favs" (click)="toggleFavorite()">
-        <md-icon>{{isFavorite ? 'favorite' : 'favorite_border'}}</md-icon>
+      <button mat-raised-button [ngClass]="{'favorited': isFavorite}" class="add-to-favs" (click)="toggleFavorite()">
+        <mat-icon>{{isFavorite ? 'favorite' : 'favorite_border'}}</mat-icon>
         Favourites
       </button>
     </div>

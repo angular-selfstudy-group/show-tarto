@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MdProgressSpinnerModule, MdIconModule, MdButtonModule } from '@angular/material';
+import { MatProgressSpinnerModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { MovieDetailComponent } from './movie-detail.component';
 import { MovieDetailRoutingModule } from './movie-detail-routing.module';
@@ -8,7 +8,7 @@ import { MovieDetailRoutingModule } from './movie-detail-routing.module';
     imports: [
         MovieDetailRoutingModule,
         CommonModule,
-        MdProgressSpinnerModule, MdIconModule, MdButtonModule
+        MatProgressSpinnerModule, MatIconModule, MatButtonModule
     ],
     exports: [],
     declarations: [MovieDetailComponent],

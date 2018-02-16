@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
@@ -15,7 +15,7 @@ import { PagesModule } from './pages/pages.module';
 import { ServicesModule } from 'app/services';
 
 // Shared module
-import { MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule } from '@angular/material';
+import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
 import 'hammerjs';
 
 @NgModule({
@@ -24,11 +24,12 @@ import 'hammerjs';
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
-    MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule,
+    MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule,
     AppRoutingModule,
     PagesModule
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
