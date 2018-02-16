@@ -19,5 +19,5 @@ deploy:
     token:  "$FIREBASE_TOKEN"
     project: "show-tarto"
 
-notifications:
-    slack: epmbetsupergroup:zHdM0sziVroLLnUdzqS5hoQu
+ notifications:
+    slack: amazingshowtarto:8qbtbh3aiSPOHeNmd0Eimav0
