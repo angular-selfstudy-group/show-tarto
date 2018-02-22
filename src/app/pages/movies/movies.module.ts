@@ -5,13 +5,13 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesComponent } from './movies.component';
 import { ServicesModule } from '../../services/';
 import { MovieCardModule } from '../../components/movie-card/movie-card.module';
-import { MdIconModule, MdButtonToggleModule } from '@angular/material';
+import { MatIconModule, MatButtonToggleModule } from '@angular/material';
 
 @NgModule({
     imports: [
         CommonModule, FormsModule,
         MoviesRoutingModule, ServicesModule, MovieCardModule,
-        MdIconModule, MdButtonToggleModule
+        MatIconModule, MatButtonToggleModule
     ],
     exports: [],
     declarations: [MoviesComponent]

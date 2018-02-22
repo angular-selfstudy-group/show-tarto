@@ -63,7 +63,7 @@ export class SearchService extends SearchServiceBase {
                     imdb_id: json.imdb_id,
                     title: json.title,
                     poster: this.getDefaultPosterIfEmpty(json.poster_path, '500'),
-                    poster_bg: this.getDefaultPosterIfEmpty(json.backdrop_path, '1920'),
+                    poster_bg: this.getDefaultPosterIfEmpty(json.backdrop_path, '1280'),
                     genres: json.genres.map((genre) => ({
                         id: genre.id,
                         name: genre.name.toLowerCase().replace(' ', '-')

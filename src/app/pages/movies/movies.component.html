@@ -1,16 +1,16 @@
 <div class="watch-list container">
 	<div class="center-list">
-		<md-button-toggle-group [ngModel]="filterType">
-			<md-button-toggle value="0" routerLink="../all" >
-				<md-icon>view_comfy</md-icon>
-			</md-button-toggle>			
-			<md-button-toggle value="2" routerLink="../watchlist">
-				<md-icon>visibility</md-icon>
-			</md-button-toggle>
-			<md-button-toggle value="1" routerLink="../favorites">
-				<md-icon>favorite_border</md-icon>
-			</md-button-toggle>
-		</md-button-toggle-group>
+		<mat-button-toggle-group [ngModel]="filterType">
+			<mat-button-toggle value="0" routerLink="../all" >
+				<mat-icon>view_comfy</mat-icon>
+			</mat-button-toggle>
+			<mat-button-toggle value="2" routerLink="../watchlist">
+				<mat-icon>visibility</mat-icon>
+			</mat-button-toggle>
+			<mat-button-toggle value="1" routerLink="../favorites">
+				<mat-icon>favorite_border</mat-icon>
+			</mat-button-toggle>
+		</mat-button-toggle-group>
 	</div>
     <div class="center-list">
         <st-moviecard *ngFor="let id of watchListIds | async" [Id]='id'></st-moviecard>

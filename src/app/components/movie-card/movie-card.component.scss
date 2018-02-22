@@ -13,7 +13,7 @@
     padding: .5em;
 }
 
-md-card {
+mat-card {
     display: flex;
     color: #fff;
     font-size: 1em;
@@ -22,18 +22,18 @@ md-card {
     flex-direction: column;
     user-select: none;
 
-    md-card-title {
+    mat-card-title {
         margin: 0;
         color: mat-color($primary);
         font-size: .727em;
         font-weight: 600;
     }
 
-    md-card-content {
+    mat-card-content {
         font-size: .636em;
     }
 
-    md-card-actions.mat-card-actions {
+    mat-card-actions.mat-card-actions {
         display: flex;
         margin-bottom: 0;
         padding: 0;

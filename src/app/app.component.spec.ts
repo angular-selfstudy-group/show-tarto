@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
-import { MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule } from '@angular/material';
+import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
@@ -12,7 +12,7 @@ describe('AppComponent', () => {
         TestBed.configureTestingModule({
             imports: [
                 BrowserAnimationsModule,
-                MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule,
+                MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule,
                 RouterTestingModule
             ],
             declarations: [

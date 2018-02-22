@@ -1,11 +1,11 @@
 ## Startpage test cases:
-  - [x] md-sidenav - hide
+  - [x] mat-sidenav - hide
   - [x] nav count = 10
-  - [x] md-toolbar - show
-  - [x] md-input-container - show
+  - [x] mat-toolbar - show
+  - [x] mat-input-container - show
   - [x] input placeholder toEqual=Search show
   - [X] input type = Search
   - [x] nav.first h3.geText = Home
   - [x] nav h3 movies
   - [x] nav h3 series
-  - [x] nav.last h3 getText = About   
+  - [x] nav.last h3 getText = About

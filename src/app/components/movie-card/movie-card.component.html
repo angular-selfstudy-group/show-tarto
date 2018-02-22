@@ -1,26 +1,26 @@
-<md-card *ngIf="!isLoading" (click)="cardClick()" role="group">
-    <md-spinner *ngIf="isLoading" class="spinner"></md-spinner>
-    <img md-card-image src="{{Model.poster_bg}}">
-    <md-card-title>
+<mat-card *ngIf="!isLoading" (click)="cardClick()" role="group">
+    <mat-spinner *ngIf="isLoading" class="spinner"></mat-spinner>
+    <img mat-card-image src="{{Model.poster_bg}}">
+    <mat-card-title>
         {{ Model.title }}
         <small> ({{ Model.release_date | date:"yyyy" }})</small>
-    </md-card-title>
-    <md-card-content layout="row" layout-align="start center">
+    </mat-card-title>
+    <mat-card-content layout="row" layout-align="start center">
         <p>
             {{ Model.overview }}
         </p>
-    </md-card-content>
-    <md-card-actions layout="row" layout-align="end center">
-        <button md-icon-button mdTooltip="Add to favorite" [mdTooltipPosition]="tooltipPosition" (click)="favorite($event)">
-                    <md-icon>favorite_border</md-icon>
-                </button>
-        <button md-icon-button *ngIf="!addedToWatchList" mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
-            [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
-                    <md-icon>playlist_add</md-icon>
-                </button>
-        <button md-icon-button *ngIf="addedToWatchList" md-button mdTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
-            [mdTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
-                    <md-icon>remove</md-icon>
-                </button>
-    </md-card-actions>
-</md-card>
+    </mat-card-content>
+    <mat-card-actions layout="row" layout-align="end center">
+        <button mat-icon-button matTooltip="Add to favorite" [matTooltipPosition]="tooltipPosition" (click)="favorite($event)">
+            <mat-icon>favorite_border</mat-icon>
+        </button>
+        <button mat-icon-button *ngIf="!addedToWatchList" matTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
+            [matTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+            <mat-icon>playlist_add</mat-icon>
+        </button>
+        <button mat-icon-button *ngIf="addedToWatchList" mat-button matTooltip="{{addedToWatchList ? 'Remove from watchlist' : 'Add to watchlist'}}"
+            [matTooltipPosition]="tooltipPosition" (click)="watchlist($event)">
+            <mat-icon>remove</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>

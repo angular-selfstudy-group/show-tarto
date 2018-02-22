@@ -9,7 +9,7 @@ import { WatchListService, SearchService } from 'app/services/index';
 import { MovieDetail, Genre } from 'app/models';
 import { MovieDetailComponent } from './movie-detail.component';
 
-import { MdProgressSpinnerModule, MdIconModule, MdButtonModule } from '@angular/material';
+import { MatProgressSpinnerModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 class MockWatchListService {
   public isFavorite(id: number): boolean {
@@ -37,7 +37,7 @@ describe('Movie Detail Component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MdProgressSpinnerModule, MdIconModule, MdButtonModule],
+      imports: [MatProgressSpinnerModule, MatIconModule, MatButtonModule],
       declarations: [MovieDetailComponent],
       providers: [
         { provide: SearchService, useClass: MockSearchService },
