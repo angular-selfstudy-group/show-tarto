@@ -1,23 +1,24 @@
 language: node_js
+sudo: required
+dist: trusty
 node_js:
   - "stable"
-
-before_install:
-  - npm install -g firebase-tools
-
-install:
-  - npm install
-
 before_script:
+  - npm install -g firebase-tools
+  - npm install
   - npm run lint
 
 script:
   - ng build --env=prod
 
-deploy:
-    provider: firebase
-    token:  "$FIREBASE_TOKEN"
-    project: "show-tarto"
+cache:
+  directories:
+    - "node_modules"
 
- notifications:
-    slack: amazingshowtarto:8qbtbh3aiSPOHeNmd0Eimav0
+deploy:
+  provider: firebase
+  token:  "$FIREBASE_TOKEN"
+  project: "show-tarto"
+
+notifications:
+  slack: amazingshowtarto:8qbtbh3aiSPOHeNmd0Eimav0
