@@ -5,6 +5,10 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
+import { StoreModule } from '@ngrx/store';
+import { favoritesReducer } from './ngrx/favorites/favorites.reducer'
+import { FavoritesState } from './ngrx/favorites/favorites.model';
+
 // Components
 import { AppComponent } from './app.component';
 
@@ -18,6 +22,10 @@ import { ServicesModule } from 'app/services';
 import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
 import 'hammerjs';
 
+export interface AppState {
+  favorites: FavoritesState
+}
+
 @NgModule({
   declarations: [
     AppComponent
@@ -26,7 +34,8 @@ import 'hammerjs';
     BrowserModule, BrowserAnimationsModule,
     MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule,
     AppRoutingModule,
-    PagesModule
+    PagesModule,
+    StoreModule.forRoot({ favorites: favoritesReducer })
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

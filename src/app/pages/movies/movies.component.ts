@@ -1,8 +1,10 @@
+import { Store, select } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WatchListService } from '../../services/watchlist.service';
 import { MovieDetail } from '../../models';
 import { Observable } from 'rxjs/Rx';
+import { AppState } from './../../app.module';
 
 export enum MovieFilterType {
     All,
@@ -19,14 +21,17 @@ export class MoviesComponent implements OnInit {
     public filterType: MovieFilterType;
     public watchListIds: Observable<number[]>;
 
-    constructor(private movieStoreService: WatchListService, route: ActivatedRoute) {
+    constructor(
+        private movieStoreService: WatchListService,
+        route: ActivatedRoute,
+        private store: Store<AppState>) {
         this.filterType = route.snapshot.data.filterType;
     }
 
     private setMoviesList() {
         switch (this.filterType) {
             case MovieFilterType.Favorites:
-                this.watchListIds = this.movieStoreService.getFavorites();
+                this.watchListIds = this.store.pipe(select('ids'));
                 break;
             case MovieFilterType.Watchlist:
                 this.watchListIds = this.movieStoreService.getWatchlist();

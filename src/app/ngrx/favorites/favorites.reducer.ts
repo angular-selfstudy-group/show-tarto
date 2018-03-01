@@ -8,12 +8,18 @@ const initialState: FavoritesState = {
 export function favoritesReducer(state = initialState, action) {
     switch (action.type) {
         case FAVORITES_ACTION_TYPE.add:
-            const newIds = state.ids.concat(action.payload);
-            return Object.assign({}, state, { ids: newIds });
+            const newIds = [...state.ids, action.payload];
+            return {
+                ...state,
+                ids: newIds
+            };
 
         case FAVORITES_ACTION_TYPE.remove:
-
-            break;
+            const ids = state.ids.filter(id => id !== action.payload);
+            return {
+                ...state,
+                ids
+            }
 
         default:
             return state;
