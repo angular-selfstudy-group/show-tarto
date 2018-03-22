@@ -21,24 +21,30 @@ import { ServicesModule } from 'app/services';
 // Shared module
 import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
 import 'hammerjs';
+import { FavoritesSelector } from './ngrx/favorites/favorites.selector';
+import { FavoritesAction } from './ngrx/favorites/favorites.action';
 
 export interface AppState {
-  favorites: FavoritesState
+    favorites: FavoritesState
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule, BrowserAnimationsModule,
-    MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule,
-    AppRoutingModule,
-    PagesModule,
-    StoreModule.forRoot({ favorites: favoritesReducer })
-  ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule, BrowserAnimationsModule,
+        MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule,
+        AppRoutingModule,
+        PagesModule,
+        StoreModule.forRoot({ favorites: favoritesReducer })
+    ],
+    providers: [
+        { provide: LocationStrategy, useClass: HashLocationStrategy },
+        FavoritesAction,
+        FavoritesSelector
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

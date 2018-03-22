@@ -21,3 +21,7 @@ Before running the tests make sure you are serving the app via `ng serve`.
 * Run `npm run lint:scss` to execute [Stylelint](https://stylelint.io/)
 * Run `npm run lint:ts` to execute [TSLint](https://palantir.github.io/tslint/)
 * Run `npm run lint` to execute both task.
+
+### Next
+* add Local storage
+* finalize favorites
